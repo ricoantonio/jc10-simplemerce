@@ -1,34 +1,50 @@
 import React, { Component } from 'react'
 
 class Register extends Component{
+
+    onRegisterClick=()=>{
+        // ambil semua data dari text input
+        let username = this.username.value
+        let email = this.email.value
+        let password = this.password.value
+
+        console.log(username, email, password);
+        
+        // post data tersebut ke db.json
+
+
+    }
+
     render() {
         return (
             <div>
-                <div className="col-sm-4 mx-auto card">
+                <div className="col-sm-3 mx-auto card mt-5 bg-warning">
                     <div className="card-body">
+
                         <div className="card-title border-bottom border-secondary">
                             <h1>Register</h1>
                         </div>
-                        <div className="card-title">
-                            <h4>Username</h4>
-                        </div>
-                        <form className="input-group">
-                            <input type="text" className="form-control mb-3"/>
-                        </form>
+                        <form className="form-group border-bottom border-secondary">
+                            <div className="card-title">
+                                <h4>Username :</h4>
+                            </div>
+                                <input ref={(input)=>{this.username=input}} type="text" className="form-control btn-dark mb-3 text-center"/>
+                            
+                            <div className="card-title">
+                                <h4>Email :</h4>
+                            </div>
+                                <input ref={(input)=>{this.email=input}} type="text" className="form-control btn-dark mb-3 text-center"/>
 
-                        <div className="card-title">
-                            <h4>Email</h4>
-                        </div>
-                        <form className="input-group">
-                            <input type="text" className="form-control mb-3"/>
+                            <div className="card-title">
+                                <h4>Password :</h4>
+                            </div>
+                                <input ref={(input)=>{this.password=input}} type="password" className="form-control btn-dark mb-3 text-center"/>
                         </form>
-
-                        <div className="card-title">
-                            <h4>Password</h4>
+                        <div 
+                        onClick={this.onRegisterClick}
+                        className="text-center">
+                            <button className="btn-block btn btn-outline-dark btn-lg mt-4">Register</button>
                         </div>
-                        <form className="input-group">
-                            <input type="password" className="form-control mb-3"/>
-                        </form>
                     </div>
                 </div>
             </div>
