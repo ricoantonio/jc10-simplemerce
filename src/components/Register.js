@@ -1,17 +1,23 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 class Register extends Component{
 
     onRegisterClick=()=>{
         // ambil semua data dari text input
-        let username = this.username.value
-        let email = this.email.value
-        let password = this.password.value
+        let data_username = this.username.value
+        let data_email = this.email.value
+        let data_password = this.password.value
 
-        console.log(username, email, password);
-        
         // post data tersebut ke db.json
-
+        axios.post (
+            "http://localhost:2019/users", 
+            {
+                username:data_username,
+                email:data_email,
+                password:data_password
+            }
+        )
 
     }
 
@@ -20,10 +26,10 @@ class Register extends Component{
             <div>
                 <div className="col-sm-3 mx-auto card mt-5 bg-warning">
                     <div className="card-body">
-
                         <div className="card-title border-bottom border-secondary">
                             <h1>Register</h1>
                         </div>
+
                         <form className="form-group border-bottom border-secondary">
                             <div className="card-title">
                                 <h4>Username :</h4>
@@ -40,6 +46,7 @@ class Register extends Component{
                             </div>
                                 <input ref={(input)=>{this.password=input}} type="password" className="form-control btn-dark mb-3 text-center"/>
                         </form>
+
                         <div 
                         onClick={this.onRegisterClick}
                         className="text-center">

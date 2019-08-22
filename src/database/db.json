@@ -1,10 +1,28 @@
 {
-    "users" : [
-        {
-            "id" : 1,
-            "username" : "sansan",
-            "email" : "sansan@hotmail.com",
-            "password" : "satuduatiga"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "username": "sansan",
+      "email": "sansan@hotmail.com",
+      "password": "satuduatiga"
+    },
+    {
+      "username": "sansan",
+      "email": "sansan",
+      "password": "sansan",
+      "id": 2
+    },
+    {
+      "username": "rico",
+      "email": "sansan",
+      "password": "sansan",
+      "id": 3
+    },
+    {
+      "username": "rico",
+      "email": "sansan",
+      "password": "sansan",
+      "id": 4
+    }
+  ]
 }
