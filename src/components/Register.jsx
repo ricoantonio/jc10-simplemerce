@@ -10,6 +10,7 @@ class Register extends Component{
         let data_password = this.password.value
 
         // post data tersebut ke db.json
+        // axios.post () (menerima 2 data)
         axios.post (
             "http://localhost:2019/users", 
             {
@@ -17,14 +18,21 @@ class Register extends Component{
                 email:data_email,
                 password:data_password
             }
-        )
+        ).then((res)=>{
+            // jika berhasil
+            console.log(res.data);
+        }).catch((err)=>{
+            // jika gagal
+            console.log(err);
+            
+        })
 
     }
 
     render() {
         return (
             <div>
-                <div className="col-sm-3 mx-auto card mt-5 bg-warning">
+                <div className="col-md-3 mx-auto card mt-5 bg-warning">
                     <div className="card-body">
                         <div className="card-title border-bottom border-secondary">
                             <h1>Register</h1>
@@ -34,12 +42,12 @@ class Register extends Component{
                             <div className="card-title">
                                 <h4>Username :</h4>
                             </div>
-                                <input ref={(input)=>{this.username=input}} type="text" className="form-control btn-dark mb-3 text-center"/>
+                                <input ref={(input)=>{this.username=input}} type="text" placeholder="username" className="form-control btn-dark mb-3 text-center"/>
                             
                             <div className="card-title">
                                 <h4>Email :</h4>
                             </div>
-                                <input ref={(input)=>{this.email=input}} type="text" className="form-control btn-dark mb-3 text-center"/>
+                                <input ref={(input)=>{this.email=input}} type="text" placeholder="example@exampel.com" className="form-control btn-dark mb-3 text-center"/>
 
                             <div className="card-title">
                                 <h4>Password :</h4>
@@ -50,7 +58,7 @@ class Register extends Component{
                         <div 
                         onClick={this.onRegisterClick}
                         className="text-center">
-                            <button className="btn-block btn btn-outline-dark btn-lg mt-4">Register</button>
+                            <button className="btn-block btn btn-outline-dark btn-lg mt-4">Register Account</button>
                         </div>
                     </div>
                 </div>

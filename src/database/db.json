@@ -13,16 +13,45 @@
       "id": 2
     },
     {
-      "username": "rico",
-      "email": "sansan",
-      "password": "sansan",
+      "username": "on",
+      "email": "two",
+      "password": "three",
       "id": 3
     },
     {
-      "username": "rico",
-      "email": "sansan",
-      "password": "sansan",
+      "username": "satu",
+      "email": "two",
+      "password": "thrww",
       "id": 4
+    },
+    {
+      "username": "a",
+      "email": "b",
+      "password": "c",
+      "id": 5
+    }
+  ],
+  "products": [
+    {
+      "name": "baju",
+      "desc": "baju ",
+      "price": "50000",
+      "pic": "pic",
+      "id": 1
+    },
+    {
+      "name": "asd",
+      "desc": "asd",
+      "price": "50000",
+      "pic": "pic",
+      "id": 2
+    },
+    {
+      "name": "sa",
+      "desc": "asd",
+      "price": "asd",
+      "pic": "asd",
+      "id": 3
     }
   ]
 }
