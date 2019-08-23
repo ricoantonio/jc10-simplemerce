@@ -3,12 +3,17 @@ import axios from "axios"
 
 class ManageProducts extends Component{
 
+    state={
+        products: []
+    }
+
     componentDidMount(){
         // ambil (GET) products data dari database
         axios.get(
             "http://localhost:2019/products"
         ).then((res)=>{
-            console.log(res.data);
+            // ditaruh di state.data
+            this.setState({products:res.data})
             
         }).catch((err)=>{
             console.log(err);
@@ -16,6 +21,7 @@ class ManageProducts extends Component{
         })
     }
 
+    // input data
     onAddProduct=()=>{
         // Ambil data
         let dataNama=this.name.value
@@ -33,16 +39,66 @@ class ManageProducts extends Component{
            }
         ).then((res)=>{
             alert("Input Success")
+            {window.location.reload()}
         }).catch((err)=>{
             alert("Failed to Input")
         })
+
+        
     }
+
+    // Render list
+    renderList=()=>{
+        // Map data object jadi list
+        // products =[]
+        // product = {name, desc, proce, pic}
+        let hasilRender=this.state.products.map((product)=>{
+            return (
+                <tr className="border-bottom border-dark" style={{height:"150px"}}>
+                    <td className="">{product.name}</td>
+                    <td className="">{product.desc}</td>
+                    <td className="">{product.price}</td>
+                    <td className="">
+                        <img style={{width:"100px"}} src={product.pic} alt=""/>
+                    </td>
+                    <td className="">
+                    <button 
+                        onClick={this.onAddProduct}
+                        className="btn btn btn-success mx-2"><b>Edit</b></button>                        
+                    <button 
+                        onClick={this.onAddProduct}
+                        className="btn btn btn-danger"><b>x</b></button>                        
+                    </td>
+                </tr>
+            )
+        })
+        return hasilRender
+    }
+
 
 
 
     render() {
         return (
             <div className="container">
+
+                {/* Rendering list data */}
+                <h1 className="display-4 text-center text-warning my-4">List Product</h1>
+                <table className="table bg-warning text-center table-borderless">
+                    <thead className="border-bottom border-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Picture</th>
+                            <th className="col-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.renderList()}
+                    </tbody>
+                </table>
+                {/* Input data */}
                 <h1 className="display-4 text-center text-warning my-4">Input Product</h1>
                 <table className="table bg-warning text-center table-borderless">
                     <thead className="border-bottom border-dark">
@@ -59,7 +115,7 @@ class ManageProducts extends Component{
                             <td><input ref={(input)=>{this.name=input}} className="form-control btn btn-dark" type="text"/></td>
                             <td><input ref={(input)=>{this.desc=input}} className="form-control btn btn-dark" type="text"/></td>
                             <td><input ref={(input)=>{this.price=input}} className="form-control btn btn-dark" type="text"/></td>
-                            <td><input ref={(input)=>{this.pic=input}} className="form-control btn btn-dark" type="text"/></td>
+                            <td><input ref={(input)=>{this.pic=input}} className="form-control btn btn-dark" type="text" value="https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg"/></td>
                             <td>
                                 <button 
                                 onClick={this.onAddProduct}

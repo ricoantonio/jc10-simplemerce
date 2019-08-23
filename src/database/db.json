@@ -33,25 +33,32 @@
   ],
   "products": [
     {
-      "name": "baju",
-      "desc": "baju ",
+      "name": "Baju 1",
+      "desc": "M",
       "price": "50000",
-      "pic": "pic",
+      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
       "id": 1
     },
     {
-      "name": "asd",
-      "desc": "asd",
-      "price": "50000",
-      "pic": "pic",
+      "name": "Baju 2",
+      "desc": "L",
+      "price": "65000",
+      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
       "id": 2
     },
     {
-      "name": "sa",
-      "desc": "asd",
-      "price": "asd",
-      "pic": "asd",
+      "name": "Baju 3",
+      "desc": "XL",
+      "price": "90000",
+      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
       "id": 3
+    },
+    {
+      "name": "Baju 5",
+      "desc": "coba",
+      "price": "100000",
+      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
+      "id": 4
     }
   ]
 }
