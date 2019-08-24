@@ -43,8 +43,18 @@ class ManageProducts extends Component{
         }).catch((err)=>{
             alert("Failed to Input")
         })
+    }
 
+    onDel=(x)=>{
+       console.log(x);
+       
         
+    }
+
+    onEdit=(x)=>{
+       console.log(x);
+       
+
     }
 
     // Render list
@@ -54,20 +64,20 @@ class ManageProducts extends Component{
         // product = {name, desc, proce, pic}
         let hasilRender=this.state.products.map((product)=>{
             return (
-                <tr className="border-bottom border-dark" style={{height:"150px"}}>
-                    <td className="">{product.name}</td>
-                    <td className="">{product.desc}</td>
-                    <td className="">{product.price}</td>
-                    <td className="">
+                <tr className="border-bottom border-dark" style={{height:"120px"}}>
+                    <td className="align-middle">{product.name}</td>
+                    <td className="align-middle">{product.desc}</td>
+                    <td className="align-middle">{product.price}</td>
+                    <td className="align-middle">
                         <img style={{width:"100px"}} src={product.pic} alt=""/>
                     </td>
-                    <td className="">
-                    <button 
-                        onClick={this.onAddProduct}
-                        className="btn btn btn-success mx-2"><b>Edit</b></button>                        
-                    <button 
-                        onClick={this.onAddProduct}
-                        className="btn btn btn-danger"><b>x</b></button>                        
+                    <td className="align-middle">
+                        <button 
+                            onClick={this.onEdit} 
+                            className="btn btn btn-success mx-2"><b>Edit</b></button>                        
+                        <button 
+                            onClick={this.onDel}
+                            className="btn btn btn-danger"><b>x</b></button>                        
                     </td>
                 </tr>
             )
@@ -82,22 +92,6 @@ class ManageProducts extends Component{
         return (
             <div className="container">
 
-                {/* Rendering list data */}
-                <h1 className="display-4 text-center text-warning my-4">List Product</h1>
-                <table className="table bg-warning text-center table-borderless">
-                    <thead className="border-bottom border-dark">
-                        <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Picture</th>
-                            <th className="col-2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.renderList()}
-                    </tbody>
-                </table>
                 {/* Input data */}
                 <h1 className="display-4 text-center text-warning my-4">Input Product</h1>
                 <table className="table bg-warning text-center table-borderless">
@@ -122,6 +116,23 @@ class ManageProducts extends Component{
                                 className="btn btn btn-success"><b>+</b></button>
                             </td>
                         </tr>
+                    </tbody>
+                </table>
+
+                {/* Rendering list data */}
+                 <h1 className="display-4 text-center text-warning my-4">List Product</h1>
+                <table className="table bg-warning text-center table-borderless">
+                    <thead className="border-bottom border-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Picture</th>
+                            <th className="col-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.renderList()}
                     </tbody>
                 </table>
             </div>
