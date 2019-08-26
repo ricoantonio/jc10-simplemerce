@@ -4,7 +4,8 @@ import axios from "axios"
 class ManageProducts extends Component{
 
     state={
-        products: []
+        products: [],
+        selectedId: 0
     }
 
     componentDidMount(){
@@ -39,22 +40,23 @@ class ManageProducts extends Component{
            }
         ).then((res)=>{
             alert("Input Success")
-            {window.location.reload()}
+            this.componentDidMount()
+            this.renderList()
+            
         }).catch((err)=>{
             alert("Failed to Input")
         })
     }
 
-    onDel=(x)=>{
-       console.log(x);
-       
+    onDel=()=>{
+
+    
         
     }
 
-    onEdit=(x)=>{
-       console.log(x);
+    onEdit=()=>{
+     
        
-
     }
 
     // Render list
@@ -62,22 +64,23 @@ class ManageProducts extends Component{
         // Map data object jadi list
         // products =[]
         // product = {name, desc, proce, pic}
-        let hasilRender=this.state.products.map((product)=>{
+        
+        let hasilRender=this.state.products.map((product,index)=>{
             return (
-                <tr className="border-bottom border-dark" style={{height:"120px"}}>
+                <tr key={product.id} className="border-bottom border-dark" style={{height:"120px"}}>
                     <td className="align-middle">{product.name}</td>
                     <td className="align-middle">{product.desc}</td>
                     <td className="align-middle">{product.price}</td>
                     <td className="align-middle">
-                        <img style={{width:"100px"}} src={product.pic} alt=""/>
+                        <img className="rounded-circle" style={{width:"100px"}} src={product.pic} alt=""/>
                     </td>
                     <td className="align-middle">
                         <button 
                             onClick={this.onEdit} 
-                            className="btn btn btn-success mx-2"><b>Edit</b></button>                        
+                            className="btn btn btn-primary mx-2"><b>Edit</b></button>                        
                         <button 
                             onClick={this.onDel}
-                            className="btn btn btn-danger"><b>x</b></button>                        
+                            className="btn btn btn-danger"><b>X</b></button>                        
                     </td>
                 </tr>
             )
@@ -91,6 +94,23 @@ class ManageProducts extends Component{
     render() {
         return (
             <div className="container">
+
+                {/* Rendering list data */}
+                <h1 className="display-4 text-center text-warning my-4">List Product</h1>
+                <table className="table bg-warning text-center table-borderless">
+                    <thead className="border-bottom border-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Picture</th>
+                            <th className="col-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.renderList()}
+                    </tbody>
+                </table>
 
                 {/* Input data */}
                 <h1 className="display-4 text-center text-warning my-4">Input Product</h1>
@@ -119,25 +139,12 @@ class ManageProducts extends Component{
                     </tbody>
                 </table>
 
-                {/* Rendering list data */}
-                 <h1 className="display-4 text-center text-warning my-4">List Product</h1>
-                <table className="table bg-warning text-center table-borderless">
-                    <thead className="border-bottom border-dark">
-                        <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Picture</th>
-                            <th className="col-2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.renderList()}
-                    </tbody>
-                </table>
             </div>
         )
     }
 }
 
 export default ManageProducts
+
+// key pada baris ke74 menggunakan nilai id dari masing2 product
+// product={name,description, proice, picrure, id}/ product.id
