@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import axios from "axios"
+import { tsStringKeyword } from '@babel/types';
 
 class ManageProducts extends Component{
 
     state={
         products: [],
-        selectedId: 0
+        selectedId: 0,
+        newName:"",
+        newDesc:"",
+        newPrice:"",
+        newPic:""
     }
 
     componentDidMount(){
@@ -48,10 +53,21 @@ class ManageProducts extends Component{
         })
     }
 
+    newName=(e)=>{
+        this.setState({newName:e.target.value})
+    }
+
+    onCancle=()=>{
+        this.setState({selectedId:0})
+    }
+    
+
+
+
+
     onEdit=(id)=>{
     this.setState({selectedId:id})
     }
-
 
     onDel=()=>{
 
@@ -59,7 +75,6 @@ class ManageProducts extends Component{
         
     }
 
-    
 
     // Render list
     renderList=()=>{
@@ -90,18 +105,35 @@ class ManageProducts extends Component{
                 )
             } else{
                 return(
+
                     <tr key="product.id"  style={{height:"120px"}}>
-                        <td className="align-middle"><input className="form-control" type="text"/></td>
-                        <td className="align-middle"><input className="form-control" type="text"/></td>
-                        <td className="align-middle"><input className="form-control" type="text"/></td>
-                        <td className="align-middle"><input className="form-control" type="text"/></td>
+                        <td className="align-middle">
+                            <input className="form-control" 
+                            value={product.name} 
+                            onChange={this.newName.bind(this)} type="text"/>
+                        </td>
+                        <td className="align-middle">
+                            <input className="form-control" 
+                            value={product.desc} 
+                            onChange={(e)=>{this.newDesc(e)}} type="text"/>
+                        </td>
+                        <td className="align-middle">
+                            <input className="form-control" 
+                            value={product.price} 
+                            onChange={(e)=>{this.newPrice(e)}} type="text"/>
+                        </td>
+                        <td className="align-middle">
+                            <input className="form-control" 
+                            value={product.pic} 
+                            onChange={(e)=>{this.newPic(e)}} type="text"/>
+                        </td>
                         <td className="align-middle">
                             <button 
                                 onClick={()=>{}} 
-                                className=" align-center btn btn btn-success mx-2"><b>Seve</b>
+                                className=" align-center btn btn btn-success mx-2"><b>Save</b>
                             </button>                        
                             <button 
-                                onClick={()=>{}}
+                                onClick={()=>{this.onCancle(product.id)}}
                                 className=" align-center btn btn btn-danger"><b>Cancle</b>
                             </button>                        
                         </td>
