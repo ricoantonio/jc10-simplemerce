@@ -48,16 +48,18 @@ class ManageProducts extends Component{
         })
     }
 
+    onEdit=(id)=>{
+    this.setState({selectedId:id})
+    }
+
+
     onDel=()=>{
 
     
         
     }
 
-    onEdit=()=>{
-     
-       
-    }
+    
 
     // Render list
     renderList=()=>{
@@ -65,25 +67,47 @@ class ManageProducts extends Component{
         // products =[]
         // product = {name, desc, proce, pic}
         
-        let hasilRender=this.state.products.map((product,index)=>{
-            return (
-                <tr key={product.id} className="border-bottom border-dark" style={{height:"120px"}}>
-                    <td className="align-middle">{product.name}</td>
-                    <td className="align-middle">{product.desc}</td>
-                    <td className="align-middle">{product.price}</td>
-                    <td className="align-middle">
-                        <img className="rounded-circle" style={{width:"100px"}} src={product.pic} alt=""/>
-                    </td>
-                    <td className="align-middle">
-                        <button 
-                            onClick={this.onEdit} 
-                            className="btn btn btn-primary mx-2"><b>Edit</b></button>                        
-                        <button 
-                            onClick={this.onDel}
-                            className="btn btn btn-danger"><b>X</b></button>                        
-                    </td>
-                </tr>
-            )
+        let hasilRender=this.state.products.map((product)=>{
+
+            if (product.id != this.state.selectedId){
+                return (
+                    <tr key={product.id} className="border-bottom border-top border-dark" style={{height:"120px"}}>
+                        <td className="align-middle">{product.name}</td>
+                        <td className="align-middle">{product.desc}</td>
+                        <td className="align-middle">{product.price}</td>
+                        <td className="align-middle">
+                            <img className="rounded-circle" style={{width:"100px"}} src={product.pic} alt=""/>
+                        </td>
+                        <td className="align-middle">
+                            <button 
+                                onClick={()=>{this.onEdit(product.id)}} 
+                                className="btn btn btn-primary mx-2"><b>Edit</b></button>                        
+                            <button 
+                                onClick={()=>{this.onDel(product.id)}}
+                                className="btn btn btn-danger"><b>X</b></button>                        
+                        </td>
+                    </tr>
+                )
+            } else{
+                return(
+                    <tr key="product.id"  style={{height:"120px"}}>
+                        <td className="align-middle"><input className="form-control" type="text"/></td>
+                        <td className="align-middle"><input className="form-control" type="text"/></td>
+                        <td className="align-middle"><input className="form-control" type="text"/></td>
+                        <td className="align-middle"><input className="form-control" type="text"/></td>
+                        <td className="align-middle">
+                            <button 
+                                onClick={()=>{}} 
+                                className=" align-center btn btn btn-success mx-2"><b>Seve</b>
+                            </button>                        
+                            <button 
+                                onClick={()=>{}}
+                                className=" align-center btn btn btn-danger"><b>Cancle</b>
+                            </button>                        
+                        </td>
+                    </tr>
+                )
+            }
         })
         return hasilRender
     }
@@ -148,3 +172,20 @@ export default ManageProducts
 
 // key pada baris ke74 menggunakan nilai id dari masing2 product
 // product={name,description, proice, picrure, id}/ product.id
+
+/*
+    Memberikan function ke onClick 
+
+    1. function tidak menerima argument 
+        Langsung tuliskan nama fuctuon tersebut di dalam kurung kurawal onClick 
+
+        contoh 
+            onClick={this."namafunction"}
+
+    2. Function yang menerima argumeny 
+        Masukkan terlebih dahulu ke onClick sebuah anonumous function ()=>{}
+        Baru masukkan function yang ingin kita panggil di dalam anonymous function tersebut 
+
+        contoh 
+            onClick = { ()=>{ this."namafunction"(param) } }
+*/
