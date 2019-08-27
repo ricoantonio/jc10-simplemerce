@@ -2,7 +2,17 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 // imrc(react) , imrd (reactDOM)
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
 
 import App from "./components/App"
+import reducers from "./reducers/index"
 
-ReactDOM.render(<App/>,document.getElementById("root"))
+const STORE = createStore(reducers)
+
+ReactDOM.render(
+    <Provider store={STORE}> 
+        <App/>
+    </Provider>,
+    document.getElementById("root")
+)
