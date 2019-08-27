@@ -87,6 +87,7 @@ class ManageProducts extends Component{
     onDel=(id)=>{
         this.setState({selectedId:id})
         
+        
     }
 
 
