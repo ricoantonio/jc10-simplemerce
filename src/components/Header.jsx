@@ -48,13 +48,13 @@ class Header extends Component{
                    
                     <NavItem>
                         <NavLink to="/register">
-                            <Button color="light" className="mx-3">Register</Button>
+                            <Button className="btn btn-outline-dark mx-3" color="light">Register</Button>
                         </NavLink>
                     </NavItem>
                     
                     <NavItem>
                         <NavLink to="/login">
-                            <Button color="light" >Login</Button>
+                            <Button className="btn btn-outline-dark" color="light" >Login</Button>
                         </NavLink>
                     </NavItem>
                    

@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import axios from "axios"
-import { tsStringKeyword } from '@babel/types';
+
 
 class ManageProducts extends Component{
 
     state={
         products: [],
         selectedId: 0,
-        newName:"",
-        newDesc:"",
-        newPrice:"",
-        newPic:""
+        selectedName:"",
+        selectedDesc:"",
+        selectedPrice:"",
+        selectedPic:""
     }
 
     componentDidMount(){
@@ -53,17 +53,17 @@ class ManageProducts extends Component{
         })
     }
 
-    newName=(e)=>{
-        this.setState({newName:e.target.value})
+    selectedName=(e)=>{
+        this.setState({selectedName:e.target.value})
     }
-    newDesc=(e)=>{
-        this.setState({newDesc:e.target.value})
+    selectedDesc=(e)=>{
+        this.setState({selectedDesc:e.target.value})
     }
-    newPrice=(e)=>{
-        this.setState({newPrice:e.target.value})
+    selectedPrice=(e)=>{
+        this.setState({selectedPrice:e.target.value})
     }
-    newPic=(e)=>{
-        this.setState({newPic:e.target.value})
+    selectedPic=(e)=>{
+        this.setState({selectedPic:e.target.value})
     }
 
     onCancle=()=>{
@@ -71,16 +71,21 @@ class ManageProducts extends Component{
     }
     
 
+    
 
 
-
-    onEdit=(id)=>{
-    this.setState({selectedId:id})
+    onEdit=(id,data)=>{
+       this.setState({
+        selectedId:id,
+        selectedName:data.name,
+        selectedDesc:data.desc,
+        selectedPrice:data.price,
+        selectedPic:data.pic
+       })
     }
 
-    onDel=()=>{
-
-    
+    onDel=(id)=>{
+        this.setState({selectedId:id})
         
     }
 
@@ -104,7 +109,7 @@ class ManageProducts extends Component{
                         </td>
                         <td className="align-middle">
                             <button 
-                                onClick={()=>{this.onEdit(product.id)}} 
+                                onClick={()=>{this.onEdit(product.id, product)}} 
                                 className="btn btn btn-primary mx-2"><b>Edit</b></button>                        
                             <button 
                                 onClick={()=>{this.onDel(product.id)}}
@@ -118,23 +123,27 @@ class ManageProducts extends Component{
                     <tr key="product.id"  style={{height:"120px"}}>
                         <td className="align-middle">
                             <input className="form-control" 
-                            value={product.name} 
-                            onChange={this.newName.bind(this)} type="text"/>
+                                value={this.state.selectedName}
+                                onChange={(e)=>{this.selectedName(e)}} 
+                                type="text"/>
                         </td>
                         <td className="align-middle">
                             <input className="form-control" 
-                            value={product.desc} 
-                            onChange={(e)=>{this.newDesc(e)}} type="text"/>
+                                value={this.state.selectedDesc} 
+                                onChange={(e)=>{this.selectedDesc(e)}} 
+                                type="text"/>
                         </td>
                         <td className="align-middle">
                             <input className="form-control" 
-                            value={product.price} 
-                            onChange={(e)=>{this.newPrice(e)}} type="text"/>
+                                value={this.state.selectedPrice} 
+                                onChange={(e)=>{this.selectedPrice(e)}} 
+                                type="text"/>
                         </td>
                         <td className="align-middle">
                             <input className="form-control" 
-                            value={product.pic} 
-                            onChange={(e)=>{this.newPic(e)}} type="text"/>
+                                value={this.state.selectedPic} 
+                                onChange={(e)=>{this.selectedPic(e)}} 
+                                type="text"/>
                         </td>
                         <td className="align-middle">
                             <button 
