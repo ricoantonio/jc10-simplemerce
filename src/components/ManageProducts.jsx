@@ -56,6 +56,15 @@ class ManageProducts extends Component{
     newName=(e)=>{
         this.setState({newName:e.target.value})
     }
+    newDesc=(e)=>{
+        this.setState({newDesc:e.target.value})
+    }
+    newPrice=(e)=>{
+        this.setState({newPrice:e.target.value})
+    }
+    newPic=(e)=>{
+        this.setState({newPic:e.target.value})
+    }
 
     onCancle=()=>{
         this.setState({selectedId:0})
