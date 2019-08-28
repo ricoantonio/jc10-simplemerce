@@ -19,12 +19,6 @@
       "id": 3
     },
     {
-      "username": "satu",
-      "email": "two",
-      "password": "thrww",
-      "id": 4
-    },
-    {
       "username": "a",
       "email": "b",
       "password": "c",
@@ -33,39 +27,67 @@
   ],
   "products": [
     {
-      "id": 1,
-      "desc": "-",
-      "name": "Asus GeForce RTX 2070 8GB DDR6 - Strix Gaming OC   ",
-      "price": " Rp 9.690.000 ",
-      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/4/6/9561560/9561560_af0b526b-ecd9-48e1-8a26-19bb40fe9da6_604_466.jpg"
+      "name": "AMD Ryzen 7 3800X ",
+      "desc": "3.9Ghz Up To 4.5Ghz Cache 32MB 105W AM4 [Box] - 8 Core",
+      "price": "Rp 6.249.000",
+      "pic": "https://ecs7.tokopedia.net/img/cache/700/product-1/2019/7/29/9651507/9651507_fc8c9c8d-8d91-47ef-b767-d1935368a703_700_700",
+      "id": 1
     },
     {
-      "name": "Asus GeForce RTX 2060 6GB DDR6 - Strix OC   ",
-      "desc": "-",
-      "price": " Rp 7.250.000 ",
-      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/4/5/9561560/9561560_651b5c88-8edb-4d93-b42c-5d97229c7969_500_500.jpg",
+      "name": "be quiet! Gaming Case SILENT BASE 601",
+      "desc": "Black With Side Window",
+      "price": " Rp 2.300.000 ",
+      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/5/14/9651507/9651507_1383d40e-819b-48c7-bdc6-2d4407c34cba_1667_1667",
       "id": 2
     },
     {
-      "name": "Asus GeForce RTX 2080 Ti 11GB DDR6 - Strix OC   ",
-      "desc": "-",
-      "price": " Rp 24.150.000 ",
-      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/4/6/9561560/9561560_db9210fe-3644-43a2-a5b7-65c52a86cd52_500_500.jpg",
+      "name": "WDC Black PC SSD 500GB",
+      "desc": "M.2 NVMe PCIe",
+      "price": "Rp 1.700.000",
+      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/4/20/9561560/9561560_ceaa8c1b-5e4d-419e-9fc2-214132e84cfa_500_500.jpg",
       "id": 3
     },
     {
-      "name": "Asus GeForce GTX 1660 6GB DDR5 - TUF Gaming   ",
-      "desc": "-",
-      "price": " Rp 3.750.000 ",
-      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/4/16/1157156/1157156_16471e61-d8d0-4dbb-ae26-5806ad2e801c.jpg",
+      "name": "Cooler Master V750",
+      "desc": "80+ Gold - Modular",
+      "price": "Rp 1.590.000",
+      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/4/9/1157156/1157156_018a89d0-8ff5-4a9e-9b61-adc2c888ae0b.jpg",
       "id": 4
     },
     {
-      "name": "Asus GeForce GTX 1070 Ti 8GB DDR5 - CERBERUS-GTX1070TI-A8G   ",
-      "desc": "-",
-      "price": " Rp 6.850.000 ",
-      "pic": "https://ecs7.tokopedia.net/img/cache/700/product-1/2018/3/24/9561560/9561560_95ecc6cd-2a3e-4943-82c9-b08bb526d18c_500_500.jpg",
+      "name": "Corsair DDR4 Vengeance RGB Pro PC24000 16GB (2X8GB)",
+      "desc": "CMW16GX4M2C3000C15W - White Heat-Spreader",
+      "price": "Rp 1.605.000",
+      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/3/6/9561560/9561560_e37abb15-9b1f-4985-b8f2-950a83a4bc69_700_700.jpg",
       "id": 5
+    },
+    {
+      "name": "MSI GeForce RTX 2070 SUPER 8GB DDR6",
+      "desc": "Ventus OC",
+      "price": "Rp 8.700.000",
+      "pic": "https://asset.msi.com/resize/image/global/product/product_10_20190709133955_5d2428ab1a1d6.png62405b38c58fe0f07fcef2367d8a9ba1/600.png",
+      "id": 6
+    },
+    {
+      "name": "WDC 1TB SATA3 64MB",
+      "desc": "Blue - WD10EZEX - Used & Garansi 1 Th ",
+      "price": "Rp 480.000",
+      "pic": "https://ecs7.tokopedia.net/img/product-1/2016/6/2/9650944/9650944_2014ebc5-91f5-495e-bf3f-bee2f8366e86.jpg",
+      "id": 7
+    },
+    {
+      "name": "MSI B450M Mortar",
+      "desc": "AM4, AMD Promontory B450, DDR4, USB3.1, SATA3",
+      "price": "Rp 1.949.000",
+      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/1/25/9561560/9561560_c02be9e8-007f-401d-ab48-784eac1f1528_1024_820.png",
+      "id": 8
+    },
+    {
+      "name": "Cooler MasterLiquid RGB",
+      "desc": "ML240RS",
+      "price": "Rp 1.810.000",
+      "pic": "https://images-na.ssl-images-amazon.com/images/I/81C5MoQ-JuL._SL1500_.jpg",
+      "id": 9
     }
   ]
 }

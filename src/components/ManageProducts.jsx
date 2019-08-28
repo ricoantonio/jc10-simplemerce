@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios"
-
+import {connect} from "react-redux"
 
 class ManageProducts extends Component{
 
@@ -47,6 +47,10 @@ class ManageProducts extends Component{
             alert("Input Success")
             this.componentDidMount()
             this.renderList()
+            this.name.value=""
+            this.desc.value=""
+            this.price.value=""
+            this.pic.value=""
             
         }).catch((err)=>{
             alert("Failed to Input")
@@ -69,10 +73,6 @@ class ManageProducts extends Component{
     onCancle=()=>{
         this.setState({selectedId:0})
     }
-    
-
-    
-
 
     onEdit=(id,data)=>{
        this.setState({
@@ -140,7 +140,7 @@ class ManageProducts extends Component{
                         <td className="align-middle">{product.desc}</td>
                         <td className="align-middle">{product.price}</td>
                         <td className="align-middle">
-                            <img className="rounded-circle shadow-sm" style={{width:"100px",height:"100px"}} src={product.pic} alt=""/>
+                            <img className="rounded-circle shadow" style={{width:"100px",height:"100px"}} src={product.pic} alt=""/>
                         </td>
                         <td className="align-middle">
                             <button 
@@ -198,62 +198,63 @@ class ManageProducts extends Component{
     }
 
 
-
-
     render() {
         return (
-            <div className="container">
-
-                {/* Rendering list data */}
-                <h1 className="display-4 text-center text-black my-4">List Product</h1>
-                <table className="table text-center table-borderless">
-                    <thead className="border-bottom border-dark">
-                        <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Picture</th>
-                            <th className="col-2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.renderList()}
-                    </tbody>
-                </table>
+            <div>
 
                 {/* Input data */}
-                <h1 className="display-4 text-center text-black my-4">Input Product</h1>
-                <table className="table text-center table-borderless">
-                    <thead className="border-bottom border-dark">
-                        <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Picture</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input ref={(input)=>{this.name=input}} className="form-control btn btn-dark shadow-sm" type="text"/></td>
-                            <td><input ref={(input)=>{this.desc=input}} className="form-control btn btn-dark shadow-sm" type="text"/></td>
-                            <td><input ref={(input)=>{this.price=input}} className="form-control btn btn-dark shadow-sm" type="text"/></td>
-                            <td><input ref={(input)=>{this.pic=input}} className="form-control btn btn-dark shadow-sm" type="text" value="https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg"/></td>
-                            <td>
-                                <button 
-                                onClick={this.onAddProduct}
-                                className="btn btn btn-success"><b>+</b></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <h1 className="display-4 text-center text-black my-4 shadow pt-2 pb-4">Input Product</h1>
+                <div className="container">
+                    <table className="table text-center table-borderless mb-5">
+                        <thead className="border-bottom border-dark">
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Picture</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input ref={(input)=>{this.name=input}} className="form-control btn btn-light shadow-sm" type="text"/></td>
+                                <td><input ref={(input)=>{this.desc=input}} className="form-control btn btn-light shadow-sm" type="text"/></td>
+                                <td><input ref={(input)=>{this.price=input}} className="form-control btn btn-light shadow-sm" type="text"/></td>
+                                <td><input ref={(input)=>{this.pic=input}} className="form-control btn btn-light shadow-sm" type="text"/></td>
+                                <td>
+                                    <button 
+                                    onClick={this.onAddProduct}
+                                    className="btn btn btn-success"><b>+</b></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
+                {/* Rendering list data */}
+                <h1 className="display-4 text-center text-black my-4 shadow pt-2 pb-4">List Product</h1>
+                <div className="container">
+                    <table className="table text-center table-borderless">
+                        <thead className="border-bottom border-dark">
+                            <tr>
+                                <th className="col-3">Name</th>
+                                <th className="col-3">Description</th>
+                                <th className="col-2">Price</th>
+                                <th className="col-2">Picture</th>
+                                <th className="col-2">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.renderList()}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         )
     }
 }
 
-export default ManageProducts
+export default connect()(ManageProducts)
 
 // key pada baris ke74 menggunakan nilai id dari masing2 product
 // product={name,description, proice, picrure, id}/ product.id
@@ -274,3 +275,5 @@ export default ManageProducts
         contoh 
             onClick = { ()=>{ this."namafunction"(param) } }
 */
+
+// axios.put mereplace data, sedangkan axios.patch ,meng-update data

@@ -1,6 +1,34 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux";
+import axios from 'axios'
+
+const onLoginUser=()=>{
+    return {
+        type:"LOGIN_SUCCESS",
+        payload:{}
+    }
+}
 
 class Login extends Component{
+
+    onLoginClick=()=>{
+        axios.get(
+            "http://localhost:2019/users", 
+            {
+                params:{
+                    username:this.username.value,
+                    password:this.password.value
+                }
+            }
+        ).then((res)=>{
+            console.log(res.data);
+            
+        }).catch(()=>{
+
+        })
+    }
+
+
     render() {
         return (
             <div>
@@ -23,7 +51,7 @@ class Login extends Component{
                         </form>
 
                         <div 
-                        onClick={this.onRegisterClick}
+                        onClick={this.onLoginClick}
                         className="text-center">
                             <button className="btn-block btn btn-outline-dark btn-lg mt-4">Login Account</button>
                         </div>
@@ -34,4 +62,4 @@ class Login extends Component{
     }
 }
 
-export default Login
+export default connect()(Login)
