@@ -13,26 +13,26 @@ class LoginGreen extends Component {
         this.toggle = this.toggle.bind(this);
       }
     
-      toggle() {
+    toggle() {
         this.setState(prevState => ({
-          modal: !prevState.modal
+            modal: !prevState.modal
         }));
-      }
+    }
 
     render(){
         return(
-        <div>
-            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-            <ModalHeader toggle={this.toggle}>You are Login as {this.props.username}</ModalHeader>
-            <ModalBody>
-                Welcome to simplestore.com, 
-                <p>Hope you enjoy your time shopping here :)</p>
-            </ModalBody>
-            <ModalFooter>
-                <Button color="warning" onClick={this.toggle}>Okey</Button>
-            </ModalFooter>
-            </Modal>
-         </div>
+            <div>
+                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                <ModalHeader toggle={this.toggle}>You are Login as "{this.props.username}"</ModalHeader>
+                <ModalBody>
+                    Welcome to simplestore.com, 
+                        <p>Hope you enjoy your time shopping here!</p>
+                </ModalBody>
+                <ModalFooter>
+                    <Button color="warning" onClick={this.toggle}>Okey</Button>
+                </ModalFooter>
+                </Modal>
+            </div>
             
         )
         

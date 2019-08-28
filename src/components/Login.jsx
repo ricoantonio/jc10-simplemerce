@@ -62,7 +62,7 @@ class Login extends Component{
         if (this.state.login==true){
             return(
                 <div>
-                    <LoginGreen/>
+                <LoginGreen/>
                     <div className="col-md-3 mx-auto card mt-5 bg-warning shadow">
                         <div className="card-body">
                             <div className="card-title border-bottom border-secondary">
