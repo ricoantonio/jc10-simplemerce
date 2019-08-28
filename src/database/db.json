@@ -33,102 +33,39 @@
   ],
   "products": [
     {
+      "id": 1,
+      "desc": "T-Shirt",
       "name": "Baju 1",
-      "desc": "M",
       "price": "50000",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
-      "id": 1
+      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg"
     },
     {
       "name": "Baju 2",
-      "desc": "L",
+      "desc": "Shirt",
       "price": "65000",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
+      "pic": "https://myshirt.com.my/wp-content/uploads/2017/02/red.jpg",
       "id": 2
     },
     {
       "name": "Baju 3",
       "desc": "XL",
       "price": "90000",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
+      "pic": "https://images-na.ssl-images-amazon.com/images/I/512rX-69mQL._SX425_.jpg",
       "id": 3
     },
     {
-      "name": "Baju 5",
-      "desc": "coba",
-      "price": "100000",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
+      "name": "Baju 4",
+      "desc": "M",
+      "price": "60000",
+      "pic": "https://stylesatlife.com/wp-content/uploads/2018/05/Stylish-Long-Sleeve-Shirts-Designs.jpg",
       "id": 4
     },
     {
-      "name": "",
-      "desc": "",
-      "price": "",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
+      "name": "Baju 5",
+      "desc": "T-Shirt (Yellow)",
+      "price": "90000",
+      "pic": "https://cdn.shopify.com/s/files/1/1213/4426/products/I_m_Feeling_Good_Today__gold_men_tshirt_black_design.png?v=1487127045",
       "id": 5
-    },
-    {
-      "name": "",
-      "desc": "",
-      "price": "",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
-      "id": 6
-    },
-    {
-      "name": "",
-      "desc": "",
-      "price": "",
-      "pic": "https://i7.pngguru.com/preview/801/603/576/t-shirt-stock-photography-clothing-sizes-shirt.jpg",
-      "id": 7
-    },
-    {
-      "name": "",
-      "desc": "",
-      "price": "",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
-      "id": 8
-    },
-    {
-      "name": "",
-      "desc": "",
-      "price": "",
-      "pic": "https://i7.pngguru.com/preview/801/603/576/t-shirt-stock-photography-clothing-sizes-shirt.png",
-      "id": 9
-    },
-    {
-      "name": "",
-      "desc": "",
-      "price": "",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
-      "id": 10
-    },
-    {
-      "name": "",
-      "desc": "",
-      "price": "",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
-      "id": 11
-    },
-    {
-      "name": "",
-      "desc": "",
-      "price": "",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
-      "id": 12
-    },
-    {
-      "name": "",
-      "desc": "",
-      "price": "",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
-      "id": 13
-    },
-    {
-      "name": "",
-      "desc": "",
-      "price": "",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg",
-      "id": 14
     }
   ]
 }

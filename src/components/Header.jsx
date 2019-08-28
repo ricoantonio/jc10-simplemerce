@@ -32,7 +32,7 @@ class Header extends Component{
     render() {
         return (
             <div>
-              <Navbar color="warning" light expand="md">
+              <Navbar className="shadow" color="warning" light expand="md">
                 <Link className="navbar-brand" to="/">simplestore.com</Link>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
@@ -48,13 +48,13 @@ class Header extends Component{
                    
                     <NavItem>
                         <NavLink to="/register">
-                            <Button className="btn btn-outline-dark mx-3" color="light">Register</Button>
+                            <Button className="btn btn-light mx-3">Register</Button>
                         </NavLink>
                     </NavItem>
                     
                     <NavItem>
                         <NavLink to="/login">
-                            <Button className="btn btn-outline-dark" color="light" >Login</Button>
+                            <Button className="btn btn-light">Login</Button>
                         </NavLink>
                     </NavItem>
                    

@@ -85,9 +85,46 @@ class ManageProducts extends Component{
     }
 
     onDel=(id)=>{
+        axios.delete(
+            `http://localhost:2019/products/${id}`
+        ).then((res)=>{
+            this.setState({selectedId:0})
+            this.componentDidMount()
+            this.renderList()
+            
+        }).catch((err)=>{
+            alert("Failed to Delete")
+        })
+        
+    }
+
+    onSave=(id)=>{
         this.setState({selectedId:id})
         
         
+        let dataNama=this.state.selectedName
+        let dataDesc=this.state.selectedDesc
+        let dataPrice=this.state.selectedPrice
+        let dataPic=this.state.selectedPic
+        // Post
+        axios.patch(
+            `http://localhost:2019/products/${this.state.selectedId}`,
+            {
+                name:dataNama,
+                desc:dataDesc,
+                price:dataPrice,
+                pic:dataPic
+           }
+        ).then((res)=>{
+            this.setState({selectedId:0})
+            this.componentDidMount()
+            this.renderList()
+            
+        }).catch((err)=>{
+            alert("Failed to Save")
+        })
+        // axios.patch
+        // http://localhost:2019/products/(id product)
     }
 
 
@@ -106,7 +143,7 @@ class ManageProducts extends Component{
                         <td className="align-middle">{product.desc}</td>
                         <td className="align-middle">{product.price}</td>
                         <td className="align-middle">
-                            <img className="rounded-circle" style={{width:"100px"}} src={product.pic} alt=""/>
+                            <img className="rounded-circle shadow-sm" style={{width:"100px",height:"100px"}} src={product.pic} alt=""/>
                         </td>
                         <td className="align-middle">
                             <button 
@@ -123,32 +160,32 @@ class ManageProducts extends Component{
 
                     <tr key="product.id"  style={{height:"120px"}}>
                         <td className="align-middle">
-                            <input className="form-control" 
+                            <input className="form-control shadow-sm" 
                                 value={this.state.selectedName}
                                 onChange={(e)=>{this.selectedName(e)}} 
                                 type="text"/>
                         </td>
                         <td className="align-middle">
-                            <input className="form-control" 
+                            <input className="form-control shadow-sm" 
                                 value={this.state.selectedDesc} 
                                 onChange={(e)=>{this.selectedDesc(e)}} 
                                 type="text"/>
                         </td>
                         <td className="align-middle">
-                            <input className="form-control" 
+                            <input className="form-control shadow-sm" 
                                 value={this.state.selectedPrice} 
                                 onChange={(e)=>{this.selectedPrice(e)}} 
                                 type="text"/>
                         </td>
                         <td className="align-middle">
-                            <input className="form-control" 
+                            <input className="form-control shadow-sm" 
                                 value={this.state.selectedPic} 
                                 onChange={(e)=>{this.selectedPic(e)}} 
                                 type="text"/>
                         </td>
                         <td className="align-middle">
                             <button 
-                                onClick={()=>{}} 
+                                onClick={()=>{this.onSave(product.id)}} 
                                 className=" align-center btn btn btn-success mx-2"><b>Save</b>
                             </button>                        
                             <button 
@@ -171,8 +208,8 @@ class ManageProducts extends Component{
             <div className="container">
 
                 {/* Rendering list data */}
-                <h1 className="display-4 text-center text-warning my-4">List Product</h1>
-                <table className="table bg-warning text-center table-borderless">
+                <h1 className="display-4 text-center text-black my-4">List Product</h1>
+                <table className="table text-center table-borderless">
                     <thead className="border-bottom border-dark">
                         <tr>
                             <th>Name</th>
@@ -188,8 +225,8 @@ class ManageProducts extends Component{
                 </table>
 
                 {/* Input data */}
-                <h1 className="display-4 text-center text-warning my-4">Input Product</h1>
-                <table className="table bg-warning text-center table-borderless">
+                <h1 className="display-4 text-center text-black my-4">Input Product</h1>
+                <table className="table text-center table-borderless">
                     <thead className="border-bottom border-dark">
                         <tr>
                             <th>Name</th>
@@ -201,10 +238,10 @@ class ManageProducts extends Component{
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input ref={(input)=>{this.name=input}} className="form-control btn btn-dark" type="text"/></td>
-                            <td><input ref={(input)=>{this.desc=input}} className="form-control btn btn-dark" type="text"/></td>
-                            <td><input ref={(input)=>{this.price=input}} className="form-control btn btn-dark" type="text"/></td>
-                            <td><input ref={(input)=>{this.pic=input}} className="form-control btn btn-dark" type="text" value="https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg"/></td>
+                            <td><input ref={(input)=>{this.name=input}} className="form-control btn btn-dark shadow-sm" type="text"/></td>
+                            <td><input ref={(input)=>{this.desc=input}} className="form-control btn btn-dark shadow-sm" type="text"/></td>
+                            <td><input ref={(input)=>{this.price=input}} className="form-control btn btn-dark shadow-sm" type="text"/></td>
+                            <td><input ref={(input)=>{this.pic=input}} className="form-control btn btn-dark shadow-sm" type="text" value="https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg"/></td>
                             <td>
                                 <button 
                                 onClick={this.onAddProduct}

@@ -8,7 +8,7 @@ const init = {
 
 const AuthReducer=(state=init, action)=>{
     switch (action.type) {
-        case value:
+        case 'asd':
             
             break;
     
@@ -17,8 +17,13 @@ const AuthReducer=(state=init, action)=>{
     }
 }
 
+const reducers=combineReducers(
+    {
+        auth:AuthReducer
+    } 
+)
 
-
+export default reducers
 
 
 // Pertama kali app running, reduser akan menjalankan kode yang ada di 'default'
