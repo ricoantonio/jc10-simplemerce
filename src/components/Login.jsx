@@ -2,10 +2,14 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import axios from 'axios'
 
-const onLoginUser=()=>{
+const onLoginUser=(ID, USERNAME)=>{
+    // Action 
     return {
-        type:"LOGIN_SUCCESS",
-        payload:{}
+        type: "LOGIN_SUCCSES",
+        payload: {
+            id:ID,
+            username:USERNAME
+        }
     }
 }
 
@@ -21,7 +25,21 @@ class Login extends Component{
                 }
             }
         ).then((res)=>{
-            console.log(res.data);
+            // res.dara merupakan sebuah array
+            // jika dara ditemukan, length > 0
+            // jika data tidak ditemukan, length = 0
+            if (res.data.length == 0) {
+                console.log("user not found");
+                
+            }else{
+                // res.data[0] ={id, email, username , password}
+                this.props.onLoginUser(
+                    res.data[0].id,
+                    res.data[0].username
+
+                );
+                
+            }
             
         }).catch(()=>{
 
@@ -62,4 +80,4 @@ class Login extends Component{
     }
 }
 
-export default connect()(Login)
+export default connect(null,{onLoginUser})(Login)
