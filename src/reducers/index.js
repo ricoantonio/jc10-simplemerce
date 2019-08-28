@@ -9,7 +9,7 @@ const init = {
 const AuthReducer=(state=init, action)=>{
     switch (action.type) {
         case 'LOGIN_SUCCESS':
-            // Ankan menyalin property di state untuk kemudian di ubah id dan usernamenya 
+            // Akan menyalin property di state untuk kemudian di ubah id dan usernamenya 
             return {...state, id: action.payload.id, username: action.payload.username}
     
         default:

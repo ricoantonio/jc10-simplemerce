@@ -217,14 +217,30 @@ class ManageProducts extends Component{
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input ref={(input)=>{this.name=input}} className="form-control btn btn-light shadow-sm" type="text"/></td>
-                                <td><input ref={(input)=>{this.desc=input}} className="form-control btn btn-light shadow-sm" type="text"/></td>
-                                <td><input ref={(input)=>{this.price=input}} className="form-control btn btn-light shadow-sm" type="text"/></td>
-                                <td><input ref={(input)=>{this.pic=input}} className="form-control btn btn-light shadow-sm" type="text"/></td>
                                 <td>
-                                    <button 
-                                    onClick={this.onAddProduct}
-                                    className="btn btn btn-success"><b>+</b></button>
+                                    <input ref={(input)=>{this.name=input}} 
+                                    className="form-control btn btn-light shadow-sm" 
+                                    type="text"/>
+                                </td>
+                                <td>
+                                    <input ref={(input)=>{this.desc=input}} 
+                                    className="form-control btn btn-light shadow-sm" 
+                                    type="text"/>
+                                </td>
+                                <td>
+                                    <input ref={(input)=>{this.price=input}} 
+                                    className="form-control btn btn-light shadow-sm" 
+                                    type="text"/>
+                                </td>
+                                <td>
+                                    <input ref={(input)=>{this.pic=input}} 
+                                    className="form-control btn btn-light shadow-sm" 
+                                    type="text"/>
+                                </td>
+                                <td>
+                                    <button onClick={this.onAddProduct}
+                                        className="btn btn btn-success"><b>+</b>
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>

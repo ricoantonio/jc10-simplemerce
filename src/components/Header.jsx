@@ -83,8 +83,8 @@ class Header extends Component{
                     </DropdownToggle>
 
                       <DropdownMenu right>
-                        <DropdownItem href="/manageproducts">
-                            Manage
+                        <DropdownItem>
+                            <NavLink className="nav-link" to="/manageproducts"> Manage</NavLink>
                         </DropdownItem>
                         <DropdownItem>
                             Option 2
