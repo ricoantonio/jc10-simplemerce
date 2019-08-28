@@ -34,37 +34,37 @@
   "products": [
     {
       "id": 1,
-      "desc": "T-Shirt",
-      "name": "Baju 1",
-      "price": "50000",
-      "pic": "https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/00_414321.jpg"
+      "desc": "-",
+      "name": "Asus GeForce RTX 2070 8GB DDR6 - Strix Gaming OC   ",
+      "price": " Rp 9.690.000 ",
+      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/4/6/9561560/9561560_af0b526b-ecd9-48e1-8a26-19bb40fe9da6_604_466.jpg"
     },
     {
-      "name": "Baju 2",
-      "desc": "Shirt",
-      "price": "65000",
-      "pic": "https://myshirt.com.my/wp-content/uploads/2017/02/red.jpg",
+      "name": "Asus GeForce RTX 2060 6GB DDR6 - Strix OC   ",
+      "desc": "-",
+      "price": " Rp 7.250.000 ",
+      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/4/5/9561560/9561560_651b5c88-8edb-4d93-b42c-5d97229c7969_500_500.jpg",
       "id": 2
     },
     {
-      "name": "Baju 3",
-      "desc": "XL",
-      "price": "90000",
-      "pic": "https://images-na.ssl-images-amazon.com/images/I/512rX-69mQL._SX425_.jpg",
+      "name": "Asus GeForce RTX 2080 Ti 11GB DDR6 - Strix OC   ",
+      "desc": "-",
+      "price": " Rp 24.150.000 ",
+      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/4/6/9561560/9561560_db9210fe-3644-43a2-a5b7-65c52a86cd52_500_500.jpg",
       "id": 3
     },
     {
-      "name": "Baju 4",
-      "desc": "M",
-      "price": "60000",
-      "pic": "https://stylesatlife.com/wp-content/uploads/2018/05/Stylish-Long-Sleeve-Shirts-Designs.jpg",
+      "name": "Asus GeForce GTX 1660 6GB DDR5 - TUF Gaming   ",
+      "desc": "-",
+      "price": " Rp 3.750.000 ",
+      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/4/16/1157156/1157156_16471e61-d8d0-4dbb-ae26-5806ad2e801c.jpg",
       "id": 4
     },
     {
-      "name": "Baju 5",
-      "desc": "T-Shirt (Yellow)",
-      "price": "90000",
-      "pic": "https://cdn.shopify.com/s/files/1/1213/4426/products/I_m_Feeling_Good_Today__gold_men_tshirt_black_design.png?v=1487127045",
+      "name": "Asus GeForce GTX 1070 Ti 8GB DDR5 - CERBERUS-GTX1070TI-A8G   ",
+      "desc": "-",
+      "price": " Rp 6.850.000 ",
+      "pic": "https://ecs7.tokopedia.net/img/cache/700/product-1/2018/3/24/9561560/9561560_95ecc6cd-2a3e-4943-82c9-b08bb526d18c_500_500.jpg",
       "id": 5
     }
   ]

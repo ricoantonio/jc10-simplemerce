@@ -99,16 +99,13 @@ class ManageProducts extends Component{
     }
 
     onSave=(id)=>{
-        this.setState({selectedId:id})
-        
-        
         let dataNama=this.state.selectedName
         let dataDesc=this.state.selectedDesc
         let dataPrice=this.state.selectedPrice
         let dataPic=this.state.selectedPic
         // Post
         axios.patch(
-            `http://localhost:2019/products/${this.state.selectedId}`,
+            `http://localhost:2019/products/${id}`,
             {
                 name:dataNama,
                 desc:dataDesc,
