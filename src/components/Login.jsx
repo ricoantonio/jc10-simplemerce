@@ -2,10 +2,13 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import axios from 'axios'
 
+
+// Action Creator
+// Setelah di masukkan ke connect, akan dipanggil sebahai this.props.onLoginUser
 const onLoginUser=(ID, USERNAME)=>{
     // Action 
     return {
-        type: "LOGIN_SUCCSES",
+        type: "LOGIN_SUCCESS",
         payload: {
             id:ID,
             username:USERNAME
@@ -16,6 +19,7 @@ const onLoginUser=(ID, USERNAME)=>{
 class Login extends Component{
 
     onLoginClick=()=>{
+        // Hanya ketika menggunakan get yang terdapat params:
         axios.get(
             "http://localhost:2019/users", 
             {
@@ -29,7 +33,7 @@ class Login extends Component{
             // jika dara ditemukan, length > 0
             // jika data tidak ditemukan, length = 0
             if (res.data.length == 0) {
-                console.log("user not found");
+                console.log("User not found");
                 
             }else{
                 // res.data[0] ={id, email, username , password}
