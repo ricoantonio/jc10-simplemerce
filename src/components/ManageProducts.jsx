@@ -203,7 +203,7 @@ class ManageProducts extends Component{
             <div>
 
                 {/* Input data */}
-                <h1 className="display-4 text-center text-black my-4 shadow pt-2 pb-4">Input Product</h1>
+                <h1 className="display-4 text-center text-black mb-4 shadow pt-2 py-4">Input Product</h1>
                 <div className="container">
                     <table className="table text-center table-borderless mb-5">
                         <thead className="border-bottom border-dark">

@@ -75,7 +75,7 @@ class Login extends Component{
                         <div 
                         onClick={this.onLoginClick}
                         className="text-center">
-                            <button className="btn-block btn btn-outline-dark btn-lg mt-4">Login Account</button>
+                            <button className="btn-block btn btn-light btn-lg mt-4">Login Account</button>
                         </div>
                     </div>
                 </div>
