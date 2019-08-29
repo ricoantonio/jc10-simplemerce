@@ -32,7 +32,7 @@ class Register extends Component{
     render() {
         return (
             <div>
-                <div className="col-md-3 mx-auto card mt-5 bg-warning shadow">
+                <div className="col-md-3 mx-auto card mt-5 shadow">
                     <div className="card-body">
                         <div className="card-title border-bottom border-secondary">
                             <h1>Register</h1>
@@ -42,23 +42,31 @@ class Register extends Component{
                             <div className="card-title">
                                 <h4>Username :</h4>
                             </div>
-                                <input ref={(input)=>{this.username=input}} type="text" placeholder="username" className="form-control btn-dark mb-3 text-center"/>
+                                <input ref={(input)=>{this.username=input}} 
+                                type="text" 
+                                placeholder="username" 
+                                className="form-control btn-light mb-3 text-center"/>
                             
                             <div className="card-title">
                                 <h4>Email :</h4>
                             </div>
-                                <input ref={(input)=>{this.email=input}} type="text" placeholder="example@exampel.com" className="form-control btn-dark mb-3 text-center"/>
+                                <input ref={(input)=>{this.email=input}} 
+                                type="text" 
+                                placeholder="example@exampel.com" 
+                                className="form-control btn-light mb-3 text-center"/>
 
                             <div className="card-title">
                                 <h4>Password :</h4>
                             </div>
-                                <input ref={(input)=>{this.password=input}} type="password" className="form-control btn-dark mb-3 text-center"/>
+                                <input ref={(input)=>{this.password=input}} 
+                                type="password" 
+                                className="form-control btn-light mb-3 text-center"/>
                         </form>
 
                         <div 
                         onClick={this.onRegisterClick}
                         className="text-center">
-                            <button className="btn-block btn btn-light btn-lg mt-4">Register Account</button>
+                            <button className="btn-block btn btn-warning btn-lg mt-4">Register Account</button>
                         </div>
                     </div>
                 </div>
