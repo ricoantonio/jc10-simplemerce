@@ -64,6 +64,7 @@ class Header extends Component{
           </div>
         );
       } else {
+        // jika ada yang login 
         return(
         <div>
             <Navbar className="shadow" color="warning" light expand="md">
@@ -82,18 +83,19 @@ class Header extends Component{
                       Hi! {this.props.username}
                     </DropdownToggle>
 
-                      <DropdownMenu right>
-                        <DropdownItem>
-                            <NavLink className="nav-link" to="/manageproducts"> Manage</NavLink>
-                        </DropdownItem>
-                        <DropdownItem>
-                            Option 2
-                        </DropdownItem>
-                        <DropdownItem divider />
-                        <DropdownItem>
-                            Log Out
-                        </DropdownItem>
+                    <DropdownMenu right>
+                      <DropdownItem>
+                          <NavLink className="nav-link" to="/manageproducts"> Manage</NavLink>
+                      </DropdownItem>
+                      <DropdownItem>
+                          Option 2
+                      </DropdownItem>
+                      <DropdownItem divider />
+                      <DropdownItem>
+                          Log Out
+                      </DropdownItem>
                     </DropdownMenu>
+
                     </UncontrolledDropdown>
                 </Nav>
               </Collapse>
