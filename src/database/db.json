@@ -88,6 +88,27 @@
       "price": "1810000",
       "pic": "https://images-na.ssl-images-amazon.com/images/I/81C5MoQ-JuL._SL1500_.jpg",
       "id": 9
+    },
+    {
+      "name": "Asus GeForce GTX 1070",
+      "desc": "8GB DDR5 Dual - OC Version ",
+      "price": "5850000",
+      "pic": "https://ecs7.tokopedia.net/img/cache/700/product-1/2016/8/8/9650943/9650943_e21879ad-3542-4309-a059-0735cd347b2e.jpg",
+      "id": 10
+    },
+    {
+      "name": "Intel Core i7-7740X",
+      "desc": "4.3Ghz Up To 4.5Ghz - Cache 8MB [Box] Socket LGA 2066 - Kabylake-X Series",
+      "price": "5450000",
+      "pic": "https://static.bhphoto.com/images/images2500x2500/1497829888_1344788.jpg",
+      "id": 11
+    },
+    {
+      "name": "GALAX Geforce RTX 2080 SUPER 8GB DDR6",
+      "desc": "RGB Effect - DUAL 100mm FAN",
+      "price": "11600000",
+      "pic": "https://ecs7.tokopedia.net/img/product-1/2019/8/3/9651507/9651507_9745256b-30f6-43b1-bd8d-5effa4c9ac18_500_500",
+      "id": 12
     }
   ]
 }

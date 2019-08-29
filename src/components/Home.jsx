@@ -37,14 +37,14 @@ class Home extends Component{
                 product.name.toLowerCase().includes(inputName.toLowerCase())
                 
             )
-
         })
-
-        
         let hasilFilterPrice=hasilFilter.filter((product)=>{
-            return (
-                (product.price>=inputMin && product.price<=inputMax)
-            )
+            
+                if (!inputMax || !inputMin){
+                    return hasilFilter
+                } if (inputMax && inputMin) {
+                    return (product.price>=inputMin && product.price<=inputMax)
+                }
         })
 
         this.setState({searchProducts:hasilFilterPrice})
