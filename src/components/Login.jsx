@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import axios from 'axios'
 import {Redirect} from 'react-router-dom'
-
+import Home from './Home'
 
 import LoginGreen from "./LoginGreen"
 import WrongUserPass from './WrongUserPass'
@@ -65,9 +65,12 @@ class Login extends Component{
     renderLogin=()=>{
         if (this.state.login==true){
             return(
-
-                <Redirect to="/"/>
-                // <LoginGreen/>
+                <div>
+                    <Home/>
+                    <LoginGreen/>
+                </div>
+                // <Redirect to="/"/>
+                
             )
         }if(this.state.wrong==true){
             return(
