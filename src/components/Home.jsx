@@ -5,7 +5,9 @@ class Home extends Component{
 
     state={
         products:[],
-        searchProducts:[]
+        searchProducts:[],
+        selectedDesc:'',
+        selectedId:0
     }
 
     componentDidMount() {
@@ -62,31 +64,62 @@ class Home extends Component{
         })
     }
 
+    onDetailClick=(id)=>{
+        axios.get(
+            " http://localhost:2019/products"
+        ).then((res)=>{
+            this.setState({selectedDesc : (res.data[(id-1)].desc)});
+            this.setState({selectedId:id})
+            this.renderList()
+        }).catch(()=>{
+
+        })
+    }
+
+
     // membuat list, akan menggunakan map
     renderList=()=>{
         // products adalah array of object [{}, {}, {},..]
         // product adalah {id, name, desc, price, pic}
         return this.state.searchProducts.map((product)=>{
+            if (this.state.selectedDesc&&((this.state.selectedId==product.id))){
             return(
-                <div key={product.id} className="card col-5 mt-5 mx-4">
-                    <div className="text-center" style={{height:"250px"}}>
-                    <img className="card-img-top p-2" src={product.pic} style={{width:"250px"}}/>
+                <div key={product.id} className="card col-4 mt-5 shadow-sm">
+                    <div className="text-center" style={{height:"230px"}}>
+                        <img className="p-2" src={product.pic} style={{width:"200px"}}/>
                     </div>
                     <div className="card-body">
-                        <h5 className="card-title" style={{height:"70px"}} >{product.name}</h5>
-                        <p className="card-text" style={{height:"20px"}} >{product.price}</p>
+                        <h5 className="card-title" style={{height:"100px"}} >{product.name}</h5>
+                        <p className="card-text" style={{height:"20px"}} >Rp.{product.price}</p>
                         <input className="form-control my-2" type="number" name="" id=""/>
-                        <div className="text-right my-3">
-                            <button className="btn btn-block btn-warning" 
-                                data-toggle="popover" data-placement="right" 
-                                data-content={product.desc} 
-                                data-container="body" 
-                                size="sm">Detail</button>
+                        <div className="text-center my-3">
+                            <div className="alert-warning p-3 my-2 shadow">
+                                {this.state.selectedDesc}
+                            </div>
                             <button className="btn  btn-block btn-success" size="sm">Add</button>
                         </div>
                     </div>
                 </div>
             )
+            } else {
+            return(
+                <div key={product.id} className="card col-4 mt-5 shadow-sm">
+                    <div className="text-center" style={{height:"230px"}}>
+                        <img className="p-2" src={product.pic} style={{width:"200px"}}/>
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title" style={{height:"100px"}} >{product.name}</h5>
+                        <p className="card-text" style={{height:"20px"}} >Rp.{product.price}</p>
+                        <input className="form-control my-2" type="number" name="" id=""/>
+                        <div className="text-right my-3">
+                            <button className="btn btn-block btn-warning" 
+                                onClick={()=>{this.onDetailClick(product.id)}}>Detail</button>
+                            <button className="btn  btn-block btn-success" size="sm">Add</button>
+                        </div>
+                    </div>
+                </div>
+            )
+            }
         })  
     }
     
@@ -97,7 +130,7 @@ class Home extends Component{
                 <div className="row">
                 {/* div untuk search  */}
                 <div className="col-3">
-                    <div className="card mt-5 p-3">
+                    <div className="card mt-5 p-3 shadow">
                         <div className="card-title border-bottom border-secondary">
                             <h3>Search</h3>
                         </div>
@@ -110,11 +143,11 @@ class Home extends Component{
                             <input ref={(input)=>{this.max=input}} className="form-control my-3" placeholder="maximum" type="text" name="" id=""/>
                         </form>
                         <button onClick={this.onSearchClick} className="btn btn-outline-success mt-2 mb-2">Search</button>
-                        <button onClick={this.onResetClick} className="btn btn-outline-danger">Reset</button>
+                        <button onClick={this.onResetClick} className="btn btn-outline-dark">Reset</button>
                     </div>
                 </div>
                 {/* div untuk list */}
-                <div className="col-9 row justify-content-end">
+                <div className="col-9 row">
                     {this.renderList()}
                 </div>
             </div>
