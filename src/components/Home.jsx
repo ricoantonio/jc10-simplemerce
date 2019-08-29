@@ -40,10 +40,14 @@ class Home extends Component{
         })
         let hasilFilterPrice=hasilFilter.filter((product)=>{
             
-                if (!inputMax || !inputMin){
+                if (!inputMax && !inputMin){
                     return hasilFilter
                 } if (inputMax && inputMin) {
                     return (product.price>=inputMin && product.price<=inputMax)
+                } if (inputMax && !inputMin){
+                    return (product.price<=inputMax)
+                } if (!inputMax && inputMin){
+                    return (product.price>=inputMin)
                 }
         })
 
