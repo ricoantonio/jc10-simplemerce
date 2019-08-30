@@ -45,15 +45,22 @@ class Login extends Component{
                 this.setState({wrong: true})
                 
             }else{
+
+                let {id, username}=res.data[0]
+                // 1. mengirim data ke redux
                 // res.data[0] ={id, email, username , password}
                 
                 this.props.onLoginUser(
-                    res.data[0].id,
-                    res.data[0].username
-                    
+                    id,username
                 );
 
                 this.setState({login:true})
+
+                // 2. Mengirim data ke local storage
+                localStorage.setItem(
+                    'userData',
+                    JSON.stringify({id,username}) 
+                )
 
 
             }
@@ -158,3 +165,6 @@ class Login extends Component{
 // }
 
 export default connect(null,{onLoginUser})(Login)
+
+
+//JSON.stringify akan mengubah bentuk object menjadi string 

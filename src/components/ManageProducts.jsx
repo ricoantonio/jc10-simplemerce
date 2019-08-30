@@ -210,7 +210,7 @@ class ManageProducts extends Component{
                             <tr>
                                 <th>Name</th>
                                 <th>Description</th>
-                                <th>Price</th>
+                                <th>Price (Rp.)</th>
                                 <th>Picture</th>
                                 <th>Action</th>
                             </tr>
@@ -255,7 +255,7 @@ class ManageProducts extends Component{
                             <tr>
                                 <th className="col-3">Name</th>
                                 <th className="col-3">Description</th>
-                                <th className="col-2">Price</th>
+                                <th className="col-2">Price (Rp.)</th>
                                 <th className="col-2">Picture</th>
                                 <th className="col-2">Action</th>
                             </tr>
