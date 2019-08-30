@@ -44,7 +44,7 @@ class ProductDetail extends Component{
                                 </div>
                                 <div>
                                     <h5 className="mt-5">Product Info:</h5>
-                                        <p>
+                                        <p className="text-secondary">
                                             {this.state.product.desc}
                                         </p> 
                                     <p className="text-info mt-5">Rp.{this.state.product.price}</p>
@@ -52,7 +52,7 @@ class ProductDetail extends Component{
                                 <div className="">
                                     <form action="">
                                         <div className="">
-                                        + <input className="form-control my-2 btn btn-light align-self-end shadow" 
+                                        + <input className="form-control my-2 btn-light align-self-end shadow" 
                                             style={{width:"70px"}}  type="number" name="" id=""/> 
                                         </div>
                                         <button className="btn btn-outline-primary btn-block mt-4 shadow" >Add to Cart</button>

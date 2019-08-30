@@ -84,21 +84,21 @@ class Home extends Component{
                 <div className="col-3">
                     <div className="card mt-5 p-3 shadow-sm">
                         <div className="card-title border-bottom border-dark">
-                            <h3>Search</h3>
+                            <h3 className="d-inline">Search</h3>
                         </div>
                         <form className="form-group mb-3">
                             <h5>Name :</h5>
                             <input onChange={this.onSearchClick} 
                             ref={(input)=>{this.name=input}} 
-                            className="form-control my-3 btn btn-light" placeholder="product" type="text" name="" id=""/>
+                            className="form-control my-3 btn-light" placeholder="product" type="text" name="" id=""/>
 
                             <h5>Price :</h5>
                             <input onChange={this.onSearchClick} 
                             ref={(input)=>{this.min=input}} 
-                            className="form-control btn btn-light" placeholder="mimimum" type="text" name="" id=""/>
+                            className="form-control btn-light" placeholder="mimimum" type="text" name="" id=""/>
                             <input onChange={this.onSearchClick} 
                             ref={(input)=>{this.max=input}} 
-                            className="form-control my-3 btn btn-light" placeholder="maximum" type="text" name="" id=""/>
+                            className="form-control my-3 btn-light" placeholder="maximum" type="text" name="" id=""/>
                         </form>
                     </div>
                 </div>
