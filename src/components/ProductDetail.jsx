@@ -52,7 +52,7 @@ class ProductDetail extends Component{
                                 <div className="">
                                     <form action="">
                                         <div className="">
-                                        + <input className="form-control my-2 btn-light align-self-end shadow" 
+                                        + <input className="form-control my-2 btn-light align-self-end shadow d-inline" 
                                             style={{width:"70px"}}  type="number" name="" id=""/> 
                                         </div>
                                         <button className="btn btn-outline-primary btn-block mt-4 shadow" >Add to Cart</button>
