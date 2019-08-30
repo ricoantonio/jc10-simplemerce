@@ -20,7 +20,7 @@ class ProductItem extends Component{
                 </div>
                 </Link >
                     <div className="text-right">
-                    + <input className="form-control my-2 btn-light align-self-end shadow-sm" 
+                    + <input className="form-control my-2 btn-light align-self-end shadow-sm d-inline" 
                     style={{width:"60px"}}  type="number" name="" id=""/> 
                     </div>
                     <div>
