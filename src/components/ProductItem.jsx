@@ -9,7 +9,7 @@ class ProductItem extends Component{
         
         return(
             
-            <div className="card col-4 mt-5 shadow-sm p-3">
+            <div className="card col-4 mb-2 shadow-sm p-3">
                 <Link to={`/productdetail/${id}`}>
                 <div className="text-center" style={{height:"200px"}}>
                     <img className="" src={pic} style={{width:"200px"}}/>
