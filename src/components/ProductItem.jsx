@@ -20,16 +20,11 @@ class ProductItem extends Component{
                 </div>
                 </Link >
                     <div className="text-right">
-                    + <input className="form-control my-2 btn btn-light align-self-end" 
+                    + <input className="form-control my-2 btn btn-light align-self-end shadow-sm" 
                     style={{width:"60px"}}  type="number" name="" id=""/> 
                     </div>
-                <Link to={`/productdetail/${id}`}>
-                    <div className="text-right">
-                        <button className="btn btn-block btn-warning">Detail</button>
-                    </div>
-                </Link>
                     <div>
-                        <button className="btn btn-block btn-primary my-1" size="sm">Add</button>
+                        <button className="btn btn-block btn-outline-primary my-1 shadow" size="sm">Add</button>
                     </div>
             </div>
            

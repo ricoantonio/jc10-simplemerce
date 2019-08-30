@@ -31,13 +31,13 @@ class ProductDetail extends Component{
                 <div className="container">
                     <div className="row my-5">
 
-                        <div className="col-5 card offset-2 shadow" style={{height:"500px"}}>
+                        <div className="col-5 card offset-2 shadow-lg" style={{height:"500px"}}>
                             <div className="mx-auto my-auto">
                                 <img className="" src={this.state.product.pic} style={{height:"350px"}} alt=""/>
                             </div>
                         </div>
                 
-                        <div className="col-3 card shadow">
+                        <div className="col-3 card shadow-lg" style={{height:"500px"}}>
                             <div className="p-3">
                                 <div>
                                     <h3>{this.state.product.name}</h3>
@@ -52,10 +52,10 @@ class ProductDetail extends Component{
                                 <div className="">
                                     <form action="">
                                         <div className="">
-                                        + <input className="form-control my-2 btn btn-light align-self-end" 
+                                        + <input className="form-control my-2 btn btn-light align-self-end shadow" 
                                             style={{width:"70px"}}  type="number" name="" id=""/> 
                                         </div>
-                                        <button className="btn btn-primary btn-block mt-2" >Add to Cart</button>
+                                        <button className="btn btn-outline-primary btn-block mt-4 shadow" >Add to Cart</button>
                                     </form>
                                 </div>
                             </div>

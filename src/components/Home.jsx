@@ -82,11 +82,11 @@ class Home extends Component{
                 <div className="row">
                 {/* div untuk search  */}
                 <div className="col-3">
-                    <div className="card mt-5 p-3 shadow">
-                        <div className="card-title border-bottom border-secondary">
+                    <div className="card mt-5 p-3 shadow-sm">
+                        <div className="card-title border-bottom border-dark">
                             <h3>Search</h3>
                         </div>
-                        <form className="form-group mb-3 border-bottom border-secondary">
+                        <form className="form-group mb-3">
                             <h5>Name :</h5>
                             <input onChange={this.onSearchClick} 
                             ref={(input)=>{this.name=input}} 
