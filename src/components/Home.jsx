@@ -137,7 +137,7 @@ class Home extends Component{
                 <div className="row">
                 {/* div untuk search  */}
                 <div className="col-3">
-                    <div className="card mt-5 p-3 shadow-sm">
+                    <div className="card mt-5 p-3 shadow-sm mr-2">
                         <div className="card-title border-bottom border-dark">
                             <h3 className="d-inline">Search</h3>
                         </div>
@@ -156,7 +156,7 @@ class Home extends Component{
                             className="form-control my-3 btn-light" placeholder="maximum" type="text" name="" id=""/>
                         </form>
                     </div>
-                    <div className="card mt-2 p-3 shadow-sm">
+                    <div className="card mt-2 p-3 shadow-sm mr-2">
                         <div className="card-title border-bottom border-dark">
                             <h3 className="d-inline">Sort by</h3>
                         </div>
@@ -169,7 +169,7 @@ class Home extends Component{
                 </div>
 
                 {/* div untuk list */}
-                    <div className="col-9 row mt-5">
+                    <div className="col-9 row mt-5 p-0">
 
                             {this.renderList()}
 

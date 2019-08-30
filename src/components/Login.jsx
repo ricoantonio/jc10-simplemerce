@@ -82,7 +82,7 @@ class Login extends Component{
         }if(this.state.wrong==true){
             return(
                 <div>
-                    <div className="col-md-3 mx-auto card mt-5 shadow">
+                    <div className="col md-3 mx-auto card mt-5 shadow">
                         <div className="card-body">
                             <div className="card-title border-bottom border-secondary">
                                 <h1>Login</h1>
@@ -117,7 +117,7 @@ class Login extends Component{
         }else{
             return(
                 <div>
-                    <div className="col-md-3 mx-auto card mt-5 shadow">
+                    <div className="col md-3 mx-auto card mt-5 shadow">
                         <div className="card-body">
                             <div className="card-title border-bottom border-secondary">
                                 <h1>Login</h1>
