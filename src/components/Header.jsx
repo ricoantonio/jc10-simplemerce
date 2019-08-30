@@ -36,7 +36,7 @@ class Header extends Component{
         return (
           <div>
             <Navbar className="shadow" color="warning" light expand="md">
-              <Link className="navbar-brand" to="/">BuildMyOwnPC.com</Link>
+              <Link className="navbar-brand" to="/">MyOwnPC.com</Link>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
@@ -68,7 +68,7 @@ class Header extends Component{
         return(
         <div>
             <Navbar className="shadow" color="warning" light expand="md">
-              <Link className="navbar-brand" to="/">BuildMyOwnPC.com</Link>
+              <Link className="navbar-brand" to="/">MyOwnPC.com</Link>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>

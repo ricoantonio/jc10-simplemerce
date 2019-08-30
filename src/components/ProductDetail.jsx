@@ -47,7 +47,7 @@ class ProductDetail extends Component{
                                         <p className="text-secondary">
                                             {this.state.product.desc}
                                         </p> 
-                                    <p className="text-info mt-5">Rp.{this.state.product.price}</p>
+                                    <h5 className="text-info mt-5">Rp.{this.state.product.price}</h5>
                                 </div>
                                 <div className="">
                                     <form action="">

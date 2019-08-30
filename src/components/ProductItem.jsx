@@ -16,11 +16,12 @@ class ProductItem extends Component{
                 </div>
                 <div className="card-body">
                     <h5 className="card-title text-dark" style={{height:"60px"}} >{name}</h5>
-                    <p className="card-text text-right text-info" style={{height:"20px"}} >Rp. {price}</p>
+                    
                 </div>
                 </Link >
-                    <div className="text-right">
-                    + <input className="form-control my-2 btn-light align-self-end shadow-sm d-inline" 
+                    <div className="text-right">    
+                    <h5 className="card-text text-right text-info d-inline" style={{height:"20px"}} >Rp. {price}</h5>
+                    <span className="mx-1">x</span> <input className="form-control my-2 btn-light align-self-end shadow-sm d-inline" 
                     style={{width:"60px"}}  type="number" name="" id=""/> 
                     </div>
                     <div>
