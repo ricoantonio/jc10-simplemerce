@@ -25,28 +25,43 @@ class ProductDetail extends Component{
     
 
     render() {
+        
         if (this.state.product){
             return(
-                <div className="container"> 
-                    <div className="card col-5 my-5 mx-auto p-3 shadow">
-                    <div className="card-header text-center">
-                        <h3>
-                            {this.state.product.name}
-                        </h3>
-                    </div>
-                    <div className="card-body">
-                        <div style={{height:"400px"}}>
-                        <img className="card-img-top" src={this.state.product.pic} alt=""/>
+                <div className="container">
+                    <div className="row my-5">
+
+                        <div className="col-5 card offset-2 shadow" style={{height:"500px"}}>
+                            <div className="mx-auto my-auto">
+                                <img className="" src={this.state.product.pic} style={{height:"350px"}} alt=""/>
+                            </div>
                         </div>
-                        <h4 className="my-3">{this.state.product.name}</h4>
-                        <p className="text-right">{this.state.product.desc}</p>
-                        <p className="text-right">Rp.{this.state.product.price}</p>
+                
+                        <div className="col-3 card shadow">
+                            <div className="p-3">
+                                <div>
+                                    <h3>{this.state.product.name}</h3>
+                                </div>
+                                <div>
+                                    <h5 className="mt-5">Product Info:</h5>
+                                        <p>
+                                            {this.state.product.desc}
+                                        </p> 
+                                    <p className="text-info mt-5">Rp.{this.state.product.price}</p>
+                                </div>
+                                <div className="">
+                                    <form action="">
+                                        <div className="">
+                                        + <input className="form-control my-2 btn btn-light align-self-end" 
+                                            style={{width:"70px"}}  type="number" name="" id=""/> 
+                                        </div>
+                                        <button className="btn btn-primary btn-block mt-2" >Add to Cart</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
-                    <form action="">
-                        <input className="form-control text-right" type="text" name="" id=""/>
-                        <button className="btn btn-success btn-block mt-2" >Add to Cart</button>
-                    </form>
-                </div>
                 </div>
             )
         } else {

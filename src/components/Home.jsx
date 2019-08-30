@@ -86,16 +86,20 @@ class Home extends Component{
                         <div className="card-title border-bottom border-secondary">
                             <h3>Search</h3>
                         </div>
-                        <form className="form-group my-3 border-bottom border-secondary">
+                        <form className="form-group mb-3 border-bottom border-secondary">
                             <h5>Name :</h5>
-                            <input ref={(input)=>{this.name=input}} className="form-control my-3" type="text" name="" id=""/>
+                            <input onChange={this.onSearchClick} 
+                            ref={(input)=>{this.name=input}} 
+                            className="form-control my-3 btn btn-light" placeholder="product" type="text" name="" id=""/>
 
                             <h5>Price :</h5>
-                            <input ref={(input)=>{this.min=input}} className="form-control" placeholder="mimimum" type="text" name="" id=""/>
-                            <input ref={(input)=>{this.max=input}} className="form-control my-3" placeholder="maximum" type="text" name="" id=""/>
+                            <input onChange={this.onSearchClick} 
+                            ref={(input)=>{this.min=input}} 
+                            className="form-control btn btn-light" placeholder="mimimum" type="text" name="" id=""/>
+                            <input onChange={this.onSearchClick} 
+                            ref={(input)=>{this.max=input}} 
+                            className="form-control my-3 btn btn-light" placeholder="maximum" type="text" name="" id=""/>
                         </form>
-                        <button onClick={this.onSearchClick} className="btn btn-outline-success mt-2 mb-2">Search</button>
-                        <button onClick={this.onResetClick} className="btn btn-outline-dark">Reset</button>
                     </div>
                 </div>
                 {/* div untuk list */}
