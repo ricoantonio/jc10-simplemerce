@@ -8,8 +8,8 @@ class ProductItem extends Component{
         let {id, name, price, pic} = this.props.barang
         
         return(
-            
             <div className="card col-4 mb-2 shadow-sm p-4">
+
                 <Link to={`/productdetail/${id}`}>
                 <div className="text-center" style={{height:"200px"}}>
                     <img className="" src={pic} style={{width:"200px"}}/>

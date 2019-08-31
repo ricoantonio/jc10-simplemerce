@@ -170,7 +170,8 @@ class Home extends Component{
 
                 {/* div untuk list */}
                     <div className="col-9 row mt-5 p-0">
-
+                        <div className="col-12 display-4 text-center mb-2 shadow-sm p-2 card ">Our Product List</div>
+               
                             {this.renderList()}
 
                         
