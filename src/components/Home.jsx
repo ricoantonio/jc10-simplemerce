@@ -59,6 +59,9 @@ class Home extends Component{
     }
 
     onResetClick=()=>{
+        this.name.value=''
+        this.min.value=''
+        this.max.value=''
         this.setState((prevState)=>{
             return{
                 searchProducts: prevState.products
@@ -141,7 +144,7 @@ class Home extends Component{
                             <div className="card-title border-bottom border-dark">
                                 <h3 className="d-inline">Search</h3>
                             </div>
-                            <form className="form-group mb-3">
+                            <form className="form-group mb-0">
                                 <h5>Name :</h5>
                                 <input onChange={this.onSearchClick} 
                                 ref={(input)=>{this.name=input}} 
@@ -155,6 +158,9 @@ class Home extends Component{
                                 ref={(input)=>{this.max=input}} 
                                 className="form-control my-3 btn-light" placeholder="maximum" type="text" name="" id=""/>
                             </form>
+                            <div className="d-inline-block align-bottom ml-2 text-right">
+                                    <button onClick={this.onResetClick} className="btn btn-sm btn-secondary">Refresh</button>
+                                </div>
                         </div>
                         <div className="card mt-2 p-3 shadow-sm mr-2">
                             <div className="card-title border-bottom border-dark">
