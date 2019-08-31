@@ -159,8 +159,8 @@ class Home extends Component{
                                 className="form-control my-3 btn-light" placeholder="maximum" type="text" name="" id=""/>
                             </form>
                             <div className="d-inline-block align-bottom ml-2 text-right">
-                                    <button onClick={this.onResetClick} className="btn btn-sm btn-secondary">Refresh</button>
-                                </div>
+                                <button onClick={this.onResetClick} className="btn btn-sm btn-secondary">Refresh</button>
+                            </div>
                         </div>
                         <div className="card mt-2 p-3 shadow-sm mr-2">
                             <div className="card-title border-bottom border-dark">
