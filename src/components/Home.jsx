@@ -101,22 +101,22 @@ class Home extends Component{
 
     onSortName=()=>{
         if (!this.state.sortNama){
-            var hasilFilter=this.state.products.sort(this.urutHuruf)
+            var hasilFilter=this.state.searchProducts.sort(this.urutHuruf)
             this.setState({searchProducts:hasilFilter})
             this.setState({sortNama:1})
         } if (this.state.sortNama){
-            var hasilFilter=this.state.products.sort(this.urutHurufDes)
+            var hasilFilter=this.state.searchProducts.sort(this.urutHurufDes)
             this.setState({searchProducts:hasilFilter})
             this.setState({sortNama:0})
         }
     }
     onSortPrice=()=>{
         if (!this.state.sortPrice){
-            var hasilFilter=this.state.products.sort(this.urut)
+            var hasilFilter=this.state.searchProducts.sort(this.urut)
             this.setState({searchProducts:hasilFilter})
             this.setState({sortPrice:1})
         } if (this.state.sortPrice){
-            var hasilFilter=this.state.products.sort(this.urutDes)
+            var hasilFilter=this.state.searchProducts.sort(this.urutDes)
             this.setState({searchProducts:hasilFilter})
             this.setState({sortPrice:0})
         }
