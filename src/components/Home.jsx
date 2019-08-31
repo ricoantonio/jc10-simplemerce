@@ -136,45 +136,41 @@ class Home extends Component{
             <div className="container">
                 <div className="row">
                 {/* div untuk search  */}
-                <div className="col-3">
-                    <div className="card mt-5 p-3 shadow-sm mr-2">
-                        <div className="card-title border-bottom border-dark">
-                            <h3 className="d-inline">Search</h3>
-                        </div>
-                        <form className="form-group mb-3">
-                            <h5>Name :</h5>
-                            <input onChange={this.onSearchClick} 
-                            ref={(input)=>{this.name=input}} 
-                            className="form-control my-3 btn-light" placeholder="product" type="text" name="" id=""/>
+                    <div className="col-3">
+                        <div className="card mt-5 p-3 shadow-sm mr-2">
+                            <div className="card-title border-bottom border-dark">
+                                <h3 className="d-inline">Search</h3>
+                            </div>
+                            <form className="form-group mb-3">
+                                <h5>Name :</h5>
+                                <input onChange={this.onSearchClick} 
+                                ref={(input)=>{this.name=input}} 
+                                className="form-control my-3 btn-light" placeholder="product" type="text" name="" id=""/>
 
-                            <h5>Price :</h5>
-                            <input onChange={this.onSearchClick} 
-                            ref={(input)=>{this.min=input}} 
-                            className="form-control btn-light" placeholder="mimimum" type="text" name="" id=""/>
-                            <input onChange={this.onSearchClick} 
-                            ref={(input)=>{this.max=input}} 
-                            className="form-control my-3 btn-light" placeholder="maximum" type="text" name="" id=""/>
-                        </form>
-                    </div>
-                    <div className="card mt-2 p-3 shadow-sm mr-2">
-                        <div className="card-title border-bottom border-dark">
-                            <h3 className="d-inline">Sort by</h3>
+                                <h5>Price :</h5>
+                                <input onChange={this.onSearchClick} 
+                                ref={(input)=>{this.min=input}} 
+                                className="form-control btn-light" placeholder="mimimum" type="text" name="" id=""/>
+                                <input onChange={this.onSearchClick} 
+                                ref={(input)=>{this.max=input}} 
+                                className="form-control my-3 btn-light" placeholder="maximum" type="text" name="" id=""/>
+                            </form>
                         </div>
-                        <div>
-                            <button onClick={this.onSortName} className="btn btn-block btn-warning">Product Name</button>
-                            <button onClick={this.onSortPrice} className="btn btn-block btn-warning">Product Price</button>
+                        <div className="card mt-2 p-3 shadow-sm mr-2">
+                            <div className="card-title border-bottom border-dark">
+                                <h3 className="d-inline">Sort by</h3>
+                            </div>
+                            <div>
+                                <button onClick={this.onSortName} className="btn btn-block btn-warning">Product Name</button>
+                                <button onClick={this.onSortPrice} className="btn btn-block btn-warning">Product Price</button>
+                            </div>
                         </div>
                     </div>
-
-                </div>
 
                 {/* div untuk list */}
-                    <div className="col-9 row mt-5 p-0">
+                    <div className="col-9 row mt-5 p-0" style={{height:"30px"}}>
                         <div className="col-12 display-4 text-center mb-2 shadow-sm p-2 card ">Our Product List</div>
-               
                             {this.renderList()}
-
-                        
                     </div>
                 </div>
             </div>
