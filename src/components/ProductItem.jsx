@@ -25,7 +25,7 @@ class ProductItem extends Component{
                     style={{width:"60px"}}  type="number" name="" id=""/> 
                     </div>
                     <div>
-                        <button className="btn btn-block btn-outline-primary my-1 shadow" size="sm">Add</button>
+                        <button className="btn btn-block btn-outline-primary my-1 shadow" size="sm">Add to cart</button>
                     </div>
             </div>
            
