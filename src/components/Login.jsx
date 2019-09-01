@@ -77,10 +77,11 @@ class Login extends Component{
                     <Home/>
                     <LoginGreen/>
                 </div>
+                
                 // <Redirect to="/"/>
                 
             )
-        }if(this.state.wrong==true){
+        } if(this.state.wrong==true){
             return(
                 <div>
                     <div className="col-md-3 mx-auto card mt-5 shadow">
@@ -152,13 +153,13 @@ class Login extends Component{
     }
 
     render() {
-        if (!this.props.username){
-        return (
-            this.renderLogin()
-        )
-        } else{
+        if (this.props.username){
             return(
                 <Home/>
+            )
+        }else{
+            return(
+                this.renderLogin()
             )
         }
     }

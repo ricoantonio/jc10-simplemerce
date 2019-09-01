@@ -104,7 +104,7 @@ class Header extends Component{
                           Option 2
                       </DropdownItem>
                       <DropdownItem divider />
-                      <DropdownItem href="/" onClick={this.props.onLogOutUser}>
+                      <DropdownItem onClick={this.props.onLogOutUser}>
                           Log Out
                       </DropdownItem>
                     </DropdownMenu>

@@ -86,17 +86,22 @@ class ManageProducts extends Component{
     }
 
     onDel=(id)=>{
-        axios.delete(
-            `http://localhost:2019/products/${id}`
-        ).then((res)=>{
-            this.setState({selectedId:0})
-            this.componentDidMount()
-            this.renderList()
-            
-        }).catch((err)=>{
-            alert("Failed to Delete")
-        })
         
+        if (window.confirm("You sure want to delete this product?")){
+            axios.delete(
+                `http://localhost:2019/products/${id}`
+            ).then((res)=>{
+                this.setState({selectedId:0})
+                this.componentDidMount()
+                this.renderList()
+                alert("Product successfuly deleted")
+                
+            }).catch((err)=>{
+                alert("Failed to Delete")
+            })
+        } else{
+            alert("Failed to delete product")
+        }
     }
 
     onSave=(id)=>{
