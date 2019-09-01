@@ -14,6 +14,20 @@ import {
     DropdownItem } from 'reactstrap';
 import {connect} from 'react-redux'
 
+const onLogOutUser=()=>{
+  // Action 
+  window.localStorage.removeItem("userData")
+  return {
+
+      type: "LOGIN_SUCCESS",
+      payload: {
+          id:'',
+          username:''
+      }
+  }
+}
+
+
 class Header extends Component{
     constructor(props) {
         super(props);
@@ -28,7 +42,6 @@ class Header extends Component{
           isOpen: !this.state.isOpen
         });
       }
-
 
     render() {
       //jika tidak ada yang login
@@ -91,7 +104,7 @@ class Header extends Component{
                           Option 2
                       </DropdownItem>
                       <DropdownItem divider />
-                      <DropdownItem>
+                      <DropdownItem href="/" onClick={this.props.onLogOutUser}>
                           Log Out
                       </DropdownItem>
                     </DropdownMenu>
@@ -115,4 +128,4 @@ const mapStateToProps=state=>{
   }
 }
 
-export default connect(mapStateToProps)(Header)
+export default connect(mapStateToProps,{onLogOutUser})(Header)
