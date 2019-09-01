@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import {connect} from "react-redux"
+import Home from './Home'
 
 class ManageProducts extends Component{
 
@@ -199,78 +200,89 @@ class ManageProducts extends Component{
 
 
     render() {
-        return (
-            <div>
-
-                {/* Input data */}
-                <h1 className="display-4 text-center text-black mb-4 shadow pt-2 py-4">Input Product</h1>
-                <div className="container">
-                    <table className="table text-center table-borderless mb-5">
-                        <thead className="border-bottom border-dark">
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Price (Rp.)</th>
-                                <th>Picture</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <input ref={(input)=>{this.name=input}} 
-                                    className="form-control btn btn-light shadow-sm" 
-                                    type="text"/>
-                                </td>
-                                <td>
-                                    <input ref={(input)=>{this.desc=input}} 
-                                    className="form-control btn btn-light shadow-sm" 
-                                    type="text"/>
-                                </td>
-                                <td>
-                                    <input ref={(input)=>{this.price=input}} 
-                                    className="form-control btn btn-light shadow-sm" 
-                                    type="text"/>
-                                </td>
-                                <td>
-                                    <input ref={(input)=>{this.pic=input}} 
-                                    className="form-control btn btn-light shadow-sm" 
-                                    type="text"/>
-                                </td>
-                                <td>
-                                    <button onClick={this.onAddProduct}
-                                        className="btn btn btn-success"><b>+</b>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        if (this.props.username){
+            return (
+                <div>
+    
+                    {/* Input data */}
+                    <h1 className="display-4 text-center text-black mb-4 shadow pt-2 py-4">Input Product</h1>
+                    <div className="container">
+                        <table className="table text-center table-borderless mb-5">
+                            <thead className="border-bottom border-dark">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Price (Rp.)</th>
+                                    <th>Picture</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input ref={(input)=>{this.name=input}} 
+                                        className="form-control btn btn-light shadow-sm" 
+                                        type="text"/>
+                                    </td>
+                                    <td>
+                                        <input ref={(input)=>{this.desc=input}} 
+                                        className="form-control btn btn-light shadow-sm" 
+                                        type="text"/>
+                                    </td>
+                                    <td>
+                                        <input ref={(input)=>{this.price=input}} 
+                                        className="form-control btn btn-light shadow-sm" 
+                                        type="text"/>
+                                    </td>
+                                    <td>
+                                        <input ref={(input)=>{this.pic=input}} 
+                                        className="form-control btn btn-light shadow-sm" 
+                                        type="text"/>
+                                    </td>
+                                    <td>
+                                        <button onClick={this.onAddProduct}
+                                            className="btn btn btn-success"><b>+</b>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    {/* Rendering list data */}
+                    <h1 className="display-4 text-center text-black my-4 shadow pt-2 pb-4">List Product</h1>
+                    <div className="container">
+                        <table className="table text-center table-borderless">
+                            <thead className="border-bottom border-dark">
+                                <tr>
+                                    <th className="col-3">Name</th>
+                                    <th className="col-3">Description</th>
+                                    <th className="col-2">Price (Rp.)</th>
+                                    <th className="col-2">Picture</th>
+                                    <th className="col-2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.renderList()}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-
-                {/* Rendering list data */}
-                <h1 className="display-4 text-center text-black my-4 shadow pt-2 pb-4">List Product</h1>
-                <div className="container">
-                    <table className="table text-center table-borderless">
-                        <thead className="border-bottom border-dark">
-                            <tr>
-                                <th className="col-3">Name</th>
-                                <th className="col-3">Description</th>
-                                <th className="col-2">Price (Rp.)</th>
-                                <th className="col-2">Picture</th>
-                                <th className="col-2">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.renderList()}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        )
+            )
+        } else {
+            return(
+            <Home/> 
+            )
+        }
     }
 }
+const mapStateToProps=state=>{
+    return {
+      username: state.auth.username
+    }
+  }
 
-export default connect()(ManageProducts)
+export default connect(mapStateToProps)(ManageProducts)
 
 // key pada baris ke74 menggunakan nilai id dari masing2 product
 // product={name,description, proice, picrure, id}/ product.id

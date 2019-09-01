@@ -152,9 +152,15 @@ class Login extends Component{
     }
 
     render() {
+        if (!this.props.username){
         return (
             this.renderLogin()
         )
+        } else{
+            return(
+                <Home/>
+            )
+        }
     }
 }
 
@@ -165,7 +171,13 @@ class Login extends Component{
 //     }
 // }
 
-export default connect(null,{onLoginUser})(Login)
+const mapStateToProps=state=>{
+    return {
+      username: state.auth.username
+    }
+  }
+
+export default connect(mapStateToProps,{onLoginUser})(Login)
 
 
 //JSON.stringify akan mengubah bentuk object menjadi string 
