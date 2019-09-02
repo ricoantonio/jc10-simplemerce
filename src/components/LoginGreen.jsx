@@ -32,6 +32,7 @@ class LoginGreen extends Component {
                     <Button color="warning" onClick={this.toggle}>Okey</Button>
                 </ModalFooter>
                 </Modal>
+                
             </div>
             
         )

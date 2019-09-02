@@ -3,71 +3,26 @@ import { connect } from "react-redux";
 import axios from 'axios'
 import {Redirect} from 'react-router-dom'
 import Home from './Home'
+import {onLoginUser} from '../action/index'
 
 import LoginGreen from "./LoginGreen"
 import WrongUserPass from './WrongUserPass'
 
-// Action Creator
-// Setelah di masukkan ke connect, akan dipanggil sebahai this.props.onLoginUser
-const onLoginUser=(ID, USERNAME)=>{
-    // Action 
-    
-    return {
-        type: "LOGIN_SUCCESS",
-        payload: {
-            id:ID,
-            username:USERNAME
-        }
-    }
-}
 
 class Login extends Component{
 
     state={
-        login: "",
+        login: false,
         wrong:""
     }
 
     onLoginClick=()=>{
-        // Hanya ketika menggunakan get yang terdapat params:
-        axios.get(
-            "http://localhost:2019/users", 
-            {
-                params:{
-                    username:this.username.value,
-                    password:this.password.value
-                }
-            }
-        ).then((res)=>{
-            // res.dara merupakan sebuah array
-            // jika dara ditemukan, length > 0
-            // jika data tidak ditemukan, length = 0
-            if (res.data.length == 0) {
-                this.setState({wrong: true})
-                
-            }else{
-
-                let {id, username}=res.data[0]
-                // 1. mengirim data ke redux
-                // res.data[0] ={id, email, username , password}
-                
-                this.props.onLoginUser(
-                    id,username
-                );
-
-                this.setState({login:true})
-
-                // 2. Mengirim data ke local storage
-                localStorage.setItem(
-                    'userData',
-                    JSON.stringify({id,username}) 
-                )
-
-
-            }
-        }).catch((err)=>{
-            
-        })
+        // mangambil data dari textbox 
+        let username = this.username.value
+        let password = this.password.value
+        
+        // memanggil action creator 'onLoginUser'
+        this.props.onLoginUser(username,password)
     }
 
     renderLogin=()=>{
@@ -81,7 +36,7 @@ class Login extends Component{
                 // <Redirect to="/"/>
                 
             )
-        } if(this.state.wrong==true){
+        }if(this.state.wrong==true){
             return(
                 <div>
                     <div className="col-md-3 mx-auto card mt-5 shadow">

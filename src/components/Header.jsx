@@ -13,19 +13,20 @@ import {
     DropdownMenu,
     DropdownItem } from 'reactstrap';
 import {connect} from 'react-redux'
+import {onLogoutUser} from '../action/index'
 
-const onLogOutUser=()=>{
-  // Action 
-  window.localStorage.removeItem("userData")
-  return {
+// const onLogOutUser=()=>{
+//   // Action 
+//   window.localStorage.removeItem("userData")
+//   return {
 
-      type: "LOGIN_SUCCESS",
-      payload: {
-          id:'',
-          username:''
-      }
-  }
-}
+//       type: "LOGIN_SUCCESS",
+//       payload: {
+//           id:'',
+//           username:''
+//       }
+//   }
+// }
 
 
 class Header extends Component{
@@ -104,7 +105,7 @@ class Header extends Component{
                           Option 2
                       </DropdownItem>
                       <DropdownItem divider />
-                      <DropdownItem href="/" onClick={this.props.onLogOutUser}>
+                      <DropdownItem href="/" onClick={this.props.onLogoutUser}>
                           Log Out
                       </DropdownItem>
                     </DropdownMenu>
@@ -128,4 +129,4 @@ const mapStateToProps=state=>{
   }
 }
 
-export default connect(mapStateToProps,{onLogOutUser})(Header)
+export default connect(mapStateToProps,{onLogoutUser})(Header)

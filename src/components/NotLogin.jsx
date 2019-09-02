@@ -18,11 +18,12 @@ class NotLogin extends React.Component {
 
   render() {
     return (
-      <Alert className="text-center" color="danger" isOpen={this.state.visible} toggle={this.onDismiss}>
+      <Alert className="text-center shadow" color="danger" isOpen={this.state.visible} toggle={this.onDismiss}>
         You are not <b>Login</b>
       </Alert>
     );
   }
 }
+
 
 export default NotLogin;

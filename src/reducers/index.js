@@ -12,6 +12,10 @@ const AuthReducer=(state=init, action)=>{
             // Akan menyalin property di state untuk kemudian di ubah id dan usernamenya 
             return {...state, id: action.payload.id, username: action.payload.username}
     
+            // Hilangkan id dan username
+        case "LOGOUT_SUCCESS":
+            return {...state, id:"", username:""}
+
         default:
             return state;
     }
