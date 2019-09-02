@@ -49,7 +49,7 @@ class App extends Component {
                         <Header/>
                         <NotLogin/>
                         <Route path="/" exact component={Home} />
-                        <Route path="/register" component={Register} />
+                        <Route path="/register" component={Register}/>
                         <Route path="/login" component={Login} />
                         <Route path="/manageproducts" component={ManageProducts} />
                         <Route path="/productdetail/:id" component={ProductDetail}/>

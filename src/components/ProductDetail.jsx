@@ -1,15 +1,21 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
-
+import {Modal, ModalBody, Button, ModalFooter, ModalHeader} from 'reactstrap'
+import Home from './Home'
 
 class ProductDetail extends Component{
 
     state={
-        product: null
+        product: null,
+        modal: true
     }
 
+    toggle=()=> {
+        this.setState(prevState => ({
+          modal: !prevState.modal
+        }));
 
+    }
     componentDidMount() {
 
 
@@ -25,12 +31,13 @@ class ProductDetail extends Component{
     
 
     render() {
-        
+
         if (this.state.product){
+
+
             return(
                 <div className="container">
                     <div className="row my-5">
-
                         <div className="col-5 card offset-2 shadow-lg" style={{height:"500px"}}>
                             <div className="mx-auto my-auto">
                                 <img className="" src={this.state.product.pic} style={{height:"350px"}} alt=""/>
