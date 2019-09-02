@@ -4,6 +4,7 @@ import ProductItem from "./ProductItem"
 import {connect} from 'react-redux'
 import NotLogin from './NotLogin'
 
+
 class Home extends Component{
 
     state={
@@ -137,10 +138,10 @@ class Home extends Component{
     }
     
     render() {
+        
         if (!this.props.username){
             return (
                 <div>
-                    <NotLogin/>
                     <div className="container">
                         <div className="row">
                         {/* div untuk search  */}

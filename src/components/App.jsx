@@ -8,6 +8,7 @@ import Home from "./Home"
 import ManageProducts from './ManageProducts'
 import Header from "./Header"
 import ProductDetail from './ProductDetail'
+import NotLogin from './NotLogin'
 
 //Action Creator 
 const keepLogin =(objUser)=>{
@@ -46,6 +47,7 @@ class App extends Component {
                 <div>
                     <BrowserRouter>
                         <Header/>
+                        <NotLogin/>
                         <Route path="/" exact component={Home} />
                         <Route path="/register" component={Register} />
                         <Route path="/login" component={Login} />

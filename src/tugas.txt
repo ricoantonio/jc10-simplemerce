@@ -12,3 +12,9 @@
         -Tidak boleh: belum login
 
     - Untuk mengetahui ada atau tidak user login, dengan check username di redux
+
+=================================================================
+
+1. register
+    - tidak boleh memiliki username yang sama
+    - tidak boleh memiliki email yang sama 

@@ -21,7 +21,7 @@ export const onLoginUser=(USERNAME, PASSWORD)=>{
             // jika data ditemukan, length > 0
             // jika data tidak ditemukan, length = 0
             if (res.data.length == 0) {
-                this.state({wrong: true})
+                // this.state({wrong: true})
                 
             }else{
 
@@ -29,7 +29,7 @@ export const onLoginUser=(USERNAME, PASSWORD)=>{
                 // 1. mengirim data ke redux
                 // res.data[0] ={id, email, username , password}
 
-                this.state({login:true})
+                // this.state({login:true})
 
                 // 2. Mengirim data ke local storage
                 localStorage.setItem(

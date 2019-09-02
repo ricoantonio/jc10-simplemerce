@@ -1,5 +1,6 @@
 import React from 'react';
-import { Alert } from 'reactstrap';
+import {connect} from 'react-redux'
+import {Alert} from 'reactstrap'
 
 class NotLogin extends React.Component {
   constructor(props) {
@@ -17,13 +18,25 @@ class NotLogin extends React.Component {
   }
 
   render() {
-    return (
-      <Alert className="text-center shadow" color="danger" isOpen={this.state.visible} toggle={this.onDismiss}>
-        You are not <b>Login</b>
-      </Alert>
-    );
+      if(!this.props.username){
+        return (
+            <Alert className="text-center shadow" color="warning" isOpen={this.state.visible} toggle={this.onDismiss}>
+            You are <b>not Login</b>
+            </Alert>
+        );
+    }else{
+        return (
+            <Alert className="text-center shadow" color="info" isOpen={this.state.visible} toggle={this.onDismiss}>
+            You are <b>Login </b>as<b> {this.props.username}</b>
+            </Alert>
+        )
+    }
+  }
+}
+const mapStateToProps=state=>{
+  return {
+    username: state.auth.username
   }
 }
 
-
-export default NotLogin;
+export default connect(mapStateToProps) (NotLogin);
