@@ -9,6 +9,7 @@ import ManageProducts from './ManageProducts'
 import Header from "./Header"
 import ProductDetail from './ProductDetail'
 import NotLogin from './NotLogin'
+import Cart from './Cart'
 
 //Action Creator 
 const keepLogin =(objUser)=>{
@@ -20,6 +21,8 @@ const keepLogin =(objUser)=>{
         }
     }
 }
+
+
 
 
 class App extends Component {
@@ -53,6 +56,8 @@ class App extends Component {
                         <Route path="/login" component={Login} />
                         <Route path="/manageproducts" component={ManageProducts} />
                         <Route path="/productdetail/:id" component={ProductDetail}/>
+                        <Route path="/mycart" component={Cart}/>
+
                     </BrowserRouter>
                 </div>
             )

@@ -13,7 +13,6 @@ class Login extends Component{
 
     state={
         login: false,
-        wrong:""
     }
 
     onLoginClick=()=>{
@@ -23,6 +22,10 @@ class Login extends Component{
         
         // memanggil action creator 'onLoginUser'
         this.props.onLoginUser(username,password)
+    }
+
+    notification=()=>{
+
     }
 
     renderLogin=()=>{
@@ -36,7 +39,7 @@ class Login extends Component{
                 // <Redirect to="/"/>
                 
             )
-        }if(this.state.wrong==true){
+        }if(this.props.wrong===true){
             return(
                 <div>
                     <div className="col-md-3 mx-auto card mt-5 shadow">
@@ -129,7 +132,8 @@ class Login extends Component{
 
 const mapStateToProps=state=>{
     return {
-      username: state.auth.username
+      username: state.auth.username,
+      error:state.auth.error
     }
   }
 

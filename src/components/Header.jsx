@@ -101,8 +101,8 @@ class Header extends Component{
                       <DropdownItem>
                           <NavLink className="nav-link" to="/manageproducts"> Manage</NavLink>
                       </DropdownItem>
-                      <DropdownItem>
-                          Option 2
+                      <DropdownItem >
+                        <NavLink className="nav-link " to="/mycart">My Cart</NavLink>
                       </DropdownItem>
                       <DropdownItem divider />
                       <DropdownItem href="/" onClick={this.props.onLogoutUser}>

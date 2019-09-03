@@ -3,10 +3,15 @@
 // Harus return object yang memiliki property 'type'
 import axios from 'axios'
 
+
+
 export const onLoginUser=(USERNAME, PASSWORD)=>{
+
+   
 
     return (dispatch)=>{
         // Hanya ketika menggunakan get yang terdapat params:
+
 
         axios.get(
             "http://localhost:2019/users", 
@@ -20,9 +25,14 @@ export const onLoginUser=(USERNAME, PASSWORD)=>{
             // res.dara merupakan sebuah array
             // jika data ditemukan, length > 0
             // jika data tidak ditemukan, length = 0
+    
             if (res.data.length == 0) {
-                // this.state({wrong: true})
-                
+                dispatch(
+                    {
+                        type:"LOGIN_ERROR",
+                        
+                    }
+                )
             }else{
 
                 let {id, username}=res.data[0]
@@ -64,6 +74,51 @@ export const onLogoutUser=()=>{
         type:"LOGOUT_SUCCESS"
     }
 }
+
+export const onAddCart=(ID,JUMLAH)=>{
+    return (dispatch)=>{
+        // Hanya ketika menggunakan get yang terdapat params:
+        let jumlah= JUMLAH
+        axios.get(
+            "http://localhost:2019/products", 
+            {
+                params:{
+                    id:ID
+                }
+            }
+        ).then((res)=>{
+
+            let {id}=res.data[0]
+            // 1. mengirim data ke redux
+            // res.data[0] ={id, email, username , password}
+
+            
+            // 2. Mengirim data ke local storage
+            localStorage.setItem(
+                'userCart',
+                JSON.stringify({id}) 
+            )
+            // menyimpan data di redux 
+            dispatch(
+                {
+                    type :"ADD_CART",
+                    payload:{
+                        id,jumlah
+                    }
+                }
+            )
+
+            
+        }).catch((err)=>{
+            
+        })
+    }
+    
+
+}
+
+
+
 
 // ketika export "menggunakan default" 
     // ketika inport di file lain tidak menggunakan {}

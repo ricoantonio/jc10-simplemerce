@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "sansan",
-      "email": "sansan@hotmail.com",
-      "password": "satuduatiga"
-    },
-    {
       "username": "sansan",
       "email": "sansan",
       "password": "sansan",
@@ -23,6 +17,24 @@
       "email": "b",
       "password": "c",
       "id": 5
+    },
+    {
+      "username": "halo",
+      "email": "halodunia@gmail.com",
+      "password": "sansan33",
+      "id": 6
+    },
+    {
+      "username": "halo2",
+      "email": "halo2@gmail.com",
+      "password": "sansan33",
+      "id": 7
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "id": 8
     }
   ],
   "products": [
@@ -173,5 +185,6 @@
       "pic": "https://media.steelseriescdn.com/thumbs/filer_public/a8/b6/a8b63d4f-f79f-406c-9c05-1d34ca44fbaf/03_rival600_kv_dual_hero.png__1850x800_q100_crop-scale_optimize_subsampling-2.png",
       "id": 21
     }
-  ]
+  ],
+  "cart": []
 }

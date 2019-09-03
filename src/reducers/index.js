@@ -3,7 +3,8 @@ import {combineReducers} from 'redux'
 
 const init = {
     id:"",
-    username:""
+    username:"",
+    error:false
 }
 
 const AuthReducer=(state=init, action)=>{
@@ -16,16 +17,38 @@ const AuthReducer=(state=init, action)=>{
         case "LOGOUT_SUCCESS":
             return {...state, id:"", username:""}
 
+        case "LOGIN_ERROR":
+            return {...state, error:true}
+
         default:
             return state;
     }
 }
 
+const cart={
+    id:"",
+    jumlah:""
+}
+
+const CartReducer=(state=cart,action)=>{
+
+    switch (action.type) {
+        case "ADD_CART":
+
+            return{...state, id:action.payload.id, jumlah:action.payload.jumlah}
+        default:
+            return state
+    }
+}
+
 const reducers=combineReducers(
     {
-        auth:AuthReducer
+        auth:AuthReducer,
+        cart:CartReducer
     } 
 )
+
+
 
 export default reducers
 

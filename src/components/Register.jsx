@@ -2,8 +2,13 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import Home from './Home'
+import Swal from 'sweetalert2'
 
 class Register extends Component{
+
+    state={
+        loading:false
+    }
 
     onRegisterClick=()=>{
         // ambil semua data dari text input
@@ -13,22 +18,66 @@ class Register extends Component{
 
         // post data tersebut ke db.json
         // axios.post () (menerima 2 data)
-        axios.post (
-            "http://localhost:2019/users", 
+
+        //check apakan username sudah terpakai 
+        axios.get(
+            'http://localhost:2019/users',
             {
-                username:data_username,
-                email:data_email,
-                password:data_password
+                params:{
+                    username:data_username
+                }
             }
         ).then((res)=>{
-            // jika berhasil
-            console.log(res.data);
-        }).catch((err)=>{
-            // jika gagal
-            console.log(err);
-            
+            if (res.data.length > 0){
+                Swal.fire(
+                    "Error",
+                    "Username already exist, try using other username",
+                    "error"
+                )
+            } else{
+                //check email bila sudah diggunakan
+                axios.get( 
+                    'http://localhost:2019/users',
+                {
+                    params:{
+                        email:data_email
+                    }
+                }).then((res)=>{
+                    if (res.data.length > 0){
+                        Swal.fire(
+                            "Error",
+                            "E-mail already exist, try using other e-mail",
+                            "error"
+                        )
+                    } else{
+                        Swal.fire(
+                            "Success",
+                            "Registration Success",
+                            "success"
+                        )
+                        axios.post(
+                            'http://localhost:2019/users',{
+                                username:data_username,
+                                email:data_email,
+                                password:data_password
+                            }
+                        )
+                    }
+                })
+            }
         })
+    }
 
+    loadingButton =()=>{
+        if (this.state.loading){
+            return(
+                <div className="spinner-grow text-center" role="status">
+                    <span className="sr-only"></span>
+                </div>
+            )
+        } return (
+            <button></button>
+        )
     }
 
     render() {
@@ -67,9 +116,9 @@ class Register extends Component{
                             </form>
 
                             <div 
-                            onClick={this.onRegisterClick}
-                            className="text-center">
-                                <button className="btn-block btn btn-warning btn-lg mt-4">Register Account</button>
+                                onClick={this.onRegisterClick}
+                                className="text-center">
+                                    <button className="btn-block btn btn-warning btn-lg mt-4">Register Account</button>
                             </div>
                         </div>
                     </div>
