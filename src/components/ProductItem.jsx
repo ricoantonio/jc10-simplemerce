@@ -2,18 +2,58 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {onAddCart} from '../action/index'
+
+const onAddCart=(ID,JUMLAH)=>{
+    return{
+        type:"ADD_CART",
+        payload:{
+            id:ID,
+            jumlah:JUMLAH
+        }
+    }
+}
+
 
 class ProductItem extends Component{
 
+    state={
+        selectedId:"",
+        selectedJumlah:0,
+        selected:[]
+    }
+
     onAddClick=(id)=>{
-    let jumlahInput=this.jumlah.value
-        if (this.jumlah.value==""){
-            jumlahInput=1
-        }
-    
-    
-    this.props.onAddCart(id,jumlahInput)
+        let jumlahInput=parseInt(this.jumlah.value) 
+            if (this.jumlah.value==""){
+                jumlahInput=1
+            }
+        this.setState({selectedJumlah:jumlahInput})
+        axios.get(
+            `http://localhost:2019/products`,
+            {
+                param:{
+                    id:id
+                }
+            }
+           
+        ).then((res)=>{
+            this.setState({selectedId:res.data[id-1].id})
+            
+            var jenis=this.state.selectedId
+            var jumlah=this.state.selectedJumlah
+            
+
+            this.props.onAddCart(id,jumlah)
+            
+            localStorage.setItem(
+                'userCart',
+                JSON.stringify([{jenis,jumlah}])
+            )
+
+            
+        }).catch((err)=>{
+
+        })
     }
 
     

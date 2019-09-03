@@ -75,48 +75,6 @@ export const onLogoutUser=()=>{
     }
 }
 
-export const onAddCart=(ID,JUMLAH)=>{
-    return (dispatch)=>{
-        // Hanya ketika menggunakan get yang terdapat params:
-        let jumlah= JUMLAH
-        axios.get(
-            "http://localhost:2019/products", 
-            {
-                params:{
-                    id:ID
-                }
-            }
-        ).then((res)=>{
-
-            let {id}=res.data[0]
-            // 1. mengirim data ke redux
-            // res.data[0] ={id, email, username , password}
-
-            
-            // 2. Mengirim data ke local storage
-            localStorage.setItem(
-                'userCart',
-                JSON.stringify({id}) 
-            )
-            // menyimpan data di redux 
-            dispatch(
-                {
-                    type :"ADD_CART",
-                    payload:{
-                        id,jumlah
-                    }
-                }
-            )
-
-            
-        }).catch((err)=>{
-            
-        })
-    }
-    
-
-}
-
 
 
 
