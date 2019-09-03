@@ -19,7 +19,6 @@ class ProductItem extends Component{
     state={
         selectedId:"",
         selectedJumlah:0,
-        selected:[]
     }
 
     onAddClick=(id)=>{
@@ -38,18 +37,18 @@ class ProductItem extends Component{
            
         ).then((res)=>{
             this.setState({selectedId:res.data[id-1].id})
-            
             var jenis=this.state.selectedId
             var jumlah=this.state.selectedJumlah
+            var newCart={
+                jenis,jumlah
+            }
+            
+            var oldCart=JSON.parse(localStorage.getItem('userCart')) || []
+            oldCart.push(newCart)
+            localStorage.setItem('userCart', JSON.stringify(oldCart))
             
 
-            this.props.onAddCart(id,jumlah)
             
-            localStorage.setItem(
-                'userCart',
-                JSON.stringify([{jenis,jumlah}])
-            )
-
             
         }).catch((err)=>{
 
